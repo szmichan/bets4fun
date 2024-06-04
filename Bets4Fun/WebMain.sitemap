@@ -1,0 +1,29 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<siteMap xmlns="http://schemas.microsoft.com/AspNet/SiteMap-File-1.0" >
+  <siteMapNode url="~/User/Defaultt.aspx" title="Home - Rules" description="Home">
+  
+    <siteMapNode url="~/User/Default.aspx" title="Game rules" description="Game rules">
+    </siteMapNode>
+    <siteMapNode url="~/User/Games.aspx" title="Fixtures"  description="Fixtures" >
+    </siteMapNode>
+    
+    <!--<siteMapNode url="~/User/ContestInfo.aspx" title="Turniej"  description="Contests" >
+    </siteMapNode>-->
+    
+    <siteMapNode url="~/User/Bets.aspx" title="My bets"  description="My bets" >
+    </siteMapNode>
+
+    <siteMapNode url="~/User/Ranking.aspx" title="Classification"  description="Classification">
+    </siteMapNode>
+    <!--<siteMapNode url="~/User/Stats/StatsDefault.aspx" title="Statystyki"  description="Statystyki">
+    </siteMapNode>-->
+
+    <siteMapNode url="~/User/ChangePassword.aspx" title="Change password"  description="Change password">
+    </siteMapNode>
+
+    <siteMapNode url="~/Admin/AdminDefault.aspx" title="Administration panel" description="Administration panel">
+    </siteMapNode>
+    
+  </siteMapNode>
+
+</siteMap>

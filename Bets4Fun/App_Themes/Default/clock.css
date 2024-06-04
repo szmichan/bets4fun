@@ -1,0 +1,84 @@
+﻿.clock {
+    margin: 0 auto;
+    color: black;
+    background-color: white;
+    padding: 0.25rem;
+}
+
+#Date {
+    text-align: center;
+    margin-top: 10px;
+}
+
+.clock > ul {
+    margin: 0 auto;
+    padding: 0;
+    list-style: none;
+    text-align: center;
+    background-color: white;
+}
+
+.clock > ul li {
+    display: inline;
+    font-size: 1.5rem;
+    text-align: center;
+    font-weight: 700;
+}
+
+.point {
+    position: relative;
+    -moz-animation: mymove 1s ease infinite;
+    -webkit-animation: mymove 1s ease infinite;
+    -o-animation: mymove 1s ease infinite;
+    animation: mymove 1s ease infinite;
+    padding-left: 3px;
+    padding-right: 3px;
+}
+
+/* Simple Animation */
+@-webkit-keyframes mymove {
+    0% {
+        opacity: 1.0;
+        
+    }
+
+    50% {
+        opacity: 0;
+        text-shadow: none;
+    }
+
+    100% {
+        opacity: 1.0;
+
+    }
+}
+
+@keyframes mymove {
+    0% {
+        opacity: 1.0;
+    }
+
+    50% {
+        opacity: 0;
+        text-shadow: none;
+    }
+
+    100% {
+        opacity: 1.0;
+    }
+}
+
+@-moz-keyframes mymove {
+    0% {
+        opacity: 1.0;
+    }
+
+    50% {
+        opacity: 0;
+        text-shadow: none;
+    }
+
+    100% {
+        opacity: 1.0;
+    }
+}

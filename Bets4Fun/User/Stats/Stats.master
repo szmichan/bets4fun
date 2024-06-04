@@ -1,0 +1,40 @@
+﻿<%@ Master Language="C#" MasterPageFile="~/Main.Master" AutoEventWireup="true" CodeBehind="Stats.master.cs" Inherits="Bets4Fun.User.Stats.Stats" %>
+
+<asp:Content ID="HeadContent" ContentPlaceHolderID="MainHeadCPH" runat="server">
+    <asp:ContentPlaceHolder ID="StatsHeadCPH" runat="server">
+    </asp:ContentPlaceHolder>
+</asp:Content>
+<asp:Content ID="SubtitleContent" ContentPlaceHolderID="MainSubtitleCPH" runat="server">
+        <asp:Label ID="MeczeLabel" runat="server" Text="Statystyki" Font-Size="X-Large"></asp:Label>
+        <br />
+        <asp:ContentPlaceHolder ID="StatsSubtitleCPH" runat="server">
+        </asp:ContentPlaceHolder>
+        <br />
+        <hr />
+        <div style="width: 20%; float: left;">
+            &nbsp;
+        </div>
+        <div style="width: 80%; float: left; text-align: right;">
+            <asp:Menu ID="Menu1" runat="server" Orientation="Horizontal"
+                DataSourceID="StatsSitemap">
+                <StaticSelectedStyle CssClass="menu_horizontal_sel" />
+                <StaticMenuItemStyle CssClass="menu_horizontal" />
+                <StaticItemTemplate>
+                    <asp:LinkButton ID="LinkButton1" runat="server" PostBackUrl='<%# Eval("NavigateUrl")%>'>
+                        <asp:Label ID="Label1" runat="server" Text='<%# Eval("Text")%>'></asp:Label>
+                    </asp:LinkButton>
+                </StaticItemTemplate>
+            </asp:Menu>
+            <asp:SiteMapDataSource ID="StatsSitemap" runat="server" SiteMapProvider="StatsSiteMap" ShowStartingNode="False" />
+        </div>
+        <div style="clear:both">
+
+        </div>
+
+   <%-- </div>--%>
+</asp:Content>
+<asp:Content ID="MainContent" ContentPlaceHolderID="MainMainCPH" runat="server">
+    <asp:ContentPlaceHolder ID="StatsMainCPH" runat="server">
+    </asp:ContentPlaceHolder>
+</asp:Content>
+

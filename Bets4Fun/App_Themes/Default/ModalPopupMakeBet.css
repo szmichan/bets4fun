@@ -1,0 +1,29 @@
+﻿.modalBackground 
+{
+	position: absolute;
+	z-index: 3000;
+	background-color: #666699;
+	filter:alpha(opacity=50);
+    opacity: 0.7;
+}
+
+.TitlebarLeft 
+{
+	float:left;
+	padding-left:5px;
+	font-weight:bold;
+	color:#FFFFFF;
+}
+
+.TitlebarRight 
+{
+	background-image:url(Images/cross_icon_normal.png);
+	background-position:right;
+	background-repeat:no-repeat;
+	width:16px;
+	height:15px;
+	float:right;
+	cursor:pointer;
+	color:#FFFFFF;
+	padding-top:1px;
+}

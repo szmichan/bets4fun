@@ -1,0 +1,19 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<siteMap xmlns="http://schemas.microsoft.com/AspNet/SiteMap-File-1.0" >
+  <siteMapNode url="~/Admin/AdminDefault.aspx" title="Admin"  description="" roles="Admin">
+    <siteMapNode url="~/Admin/AdminContests.aspx" title="Contests"  description="">
+    </siteMapNode>
+    <siteMapNode url="~/Admin/AdminTeams.aspx" title="Teams"  description="" >
+    </siteMapNode>
+    <siteMapNode url="~/Admin/AdminGames.aspx" title="Games"  description="">
+    </siteMapNode>
+    <siteMapNode url="~/Admin/AdminLeagues.aspx" title="Leagues"  description="">
+    </siteMapNode>
+    <siteMapNode url="~/Admin/AdminRoles.aspx" title="Roles"  description="">
+    </siteMapNode>
+    <siteMapNode url="~/Admin/AdminUsers.aspx" title="Users"  description="">
+    </siteMapNode>
+    <siteMapNode url="~/Admin/AdminAppSettings.aspx" title="Settings"  description="">
+    </siteMapNode>
+  </siteMapNode>
+</siteMap>

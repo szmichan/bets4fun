@@ -1,0 +1,678 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)\TypeScript\Microsoft.TypeScript.Default.props" Condition="Exists('$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)\TypeScript\Microsoft.TypeScript.Default.props')" />
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>9.0.30729</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{7110F353-E042-4ADB-B45C-B8432D640122}</ProjectGuid>
+    <ProjectTypeGuids>{349c5851-65df-11da-9384-00065b846f21};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Bets4Fun</RootNamespace>
+    <AssemblyName>Bets4Fun</AssemblyName>
+    <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
+    <FileUpgradeFlags>
+    </FileUpgradeFlags>
+    <UpgradeBackupLocation>
+    </UpgradeBackupLocation>
+    <OldToolsVersion>4.0</OldToolsVersion>
+    <UseIISExpress>true</UseIISExpress>
+    <IISExpressSSLPort />
+    <IISExpressAnonymousAuthentication />
+    <IISExpressWindowsAuthentication />
+    <IISExpressUseClassicPipelineMode />
+    <TargetFrameworkProfile />
+    <UseGlobalApplicationHostFile />
+    <Use64BitIISExpress />
+    <TypeScriptToolsVersion>2.6</TypeScriptToolsVersion>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <CodeAnalysisRuleSet>AllRules.ruleset</CodeAnalysisRuleSet>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <CodeAnalysisRuleSet>AllRules.ruleset</CodeAnalysisRuleSet>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="AjaxControlToolkit, Version=3.5.40412.0, Culture=neutral, PublicKeyToken=28f01b0e84b6d53e, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>Libs\AjaxControlToolkit.dll</HintPath>
+    </Reference>
+    <Reference Include="Newtonsoft.Json, Version=11.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <HintPath>..\packages\Newtonsoft.Json.11.0.1\lib\net45\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Net.Http.Formatting, Version=5.2.4.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.WebApi.Client.5.2.4\lib\net45\System.Net.Http.Formatting.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Security" />
+    <Reference Include="System.Web.ApplicationServices" />
+    <Reference Include="System.Web.DynamicData" />
+    <Reference Include="System.Web.Entity" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Web.Extensions" />
+    <Reference Include="System.Web.Http, Version=5.2.4.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.WebApi.Core.5.2.4\lib\net45\System.Web.Http.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Http.WebHost, Version=5.2.4.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.WebApi.WebHost.5.2.4\lib\net45\System.Web.Http.WebHost.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.EnterpriseServices" />
+    <Reference Include="System.Web.Mobile" />
+    <Reference Include="System.Xml.Linq" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Admin\Admin.master.cs">
+      <DependentUpon>Admin.master</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\Admin.master.designer.cs">
+      <DependentUpon>Admin.master</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\AdminAppSettings.aspx.cs">
+      <DependentUpon>AdminAppSettings.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\AdminAppSettings.aspx.designer.cs">
+      <DependentUpon>AdminAppSettings.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\AdminAssigningUR.aspx.cs">
+      <DependentUpon>AdminAssigningUR.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\AdminAssigningUR.aspx.designer.cs">
+      <DependentUpon>AdminAssigningUR.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\AdminContests.aspx.cs">
+      <DependentUpon>AdminContests.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\AdminContests.aspx.designer.cs">
+      <DependentUpon>AdminContests.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\AdminDefault.aspx.cs">
+      <DependentUpon>AdminDefault.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\AdminDefault.aspx.designer.cs">
+      <DependentUpon>AdminDefault.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\AdminGames.aspx.cs">
+      <DependentUpon>AdminGames.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\AdminGames.aspx.designer.cs">
+      <DependentUpon>AdminGames.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\AdminLeagues.aspx.cs">
+      <DependentUpon>AdminLeagues.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\AdminLeagues.aspx.designer.cs">
+      <DependentUpon>AdminLeagues.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\AdminRoles.aspx.cs">
+      <DependentUpon>AdminRoles.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\AdminRoles.aspx.designer.cs">
+      <DependentUpon>AdminRoles.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\AdminTeams.aspx.cs">
+      <DependentUpon>AdminTeams.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\AdminTeams.aspx.designer.cs">
+      <DependentUpon>AdminTeams.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\AdminUsers.aspx.cs">
+      <DependentUpon>AdminUsers.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\AdminUsers.aspx.designer.cs">
+      <DependentUpon>AdminUsers.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Anonymous\ResetPassword.aspx.cs">
+      <DependentUpon>ResetPassword.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Anonymous\ResetPassword.aspx.designer.cs">
+      <DependentUpon>ResetPassword.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Api\GamesController.cs" />
+    <Compile Include="Api\BetsController.cs" />
+    <Compile Include="Api\ExternalController.cs" />
+    <Compile Include="Authorization\AccessDeniedHttpModule.cs" />
+    <Compile Include="Common\BasePage.cs">
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="BusinessLogic\BetsLogic.cs" />
+    <Compile Include="BusinessLogic\ContestsInfoBetsLogic.cs" />
+    <Compile Include="BusinessLogic\ContestsInfoLogic.cs" />
+    <Compile Include="BusinessLogic\ContestsInfoOptionsLogic.cs" />
+    <Compile Include="BusinessLogic\ContestsLogic.cs" />
+    <Compile Include="BusinessLogic\LanguagesLogic.cs" />
+    <Compile Include="BusinessLogic\LeaguesLogic.cs" />
+    <Compile Include="BusinessLogic\RankingLogic.cs" />
+    <Compile Include="BusinessLogic\RolesLogic.cs" />
+    <Compile Include="BusinessLogic\TeamsLogic.cs" />
+    <Compile Include="BusinessLogic\UsersLogic.cs" />
+    <Compile Include="Common\DataBinderExtensions.cs" />
+    <Compile Include="Common\DateConverter.cs" />
+    <Compile Include="Enums\BettingType.cs" />
+    <Compile Include="Common\PasswordEncoder.cs" />
+    <Compile Include="Common\SessionKeys.cs" />
+    <Compile Include="Common\ZPException.cs" />
+    <Compile Include="BusinessLogic\GamesLogic.cs" />
+    <Compile Include="Anonymous\CreateAccount.aspx.cs">
+      <DependentUpon>CreateAccount.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Anonymous\CreateAccount.aspx.designer.cs">
+      <DependentUpon>CreateAccount.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Anonymous\AccountVerify.aspx.cs">
+      <DependentUpon>AccountVerify.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Anonymous\AccountVerify.aspx.designer.cs">
+      <DependentUpon>AccountVerify.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="App_Start\WebApiConfig.cs" />
+    <Compile Include="AssemblyHelper.cs" />
+    <Compile Include="DB.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DB.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="Global.asax.cs">
+      <DependentUpon>Global.asax</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\GridPager.cs">
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UserControls\ucMakeContestInfoBet.ascx.cs">
+      <DependentUpon>ucMakeContestInfoBet.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UserControls\ucMakeContestInfoBet.ascx.designer.cs">
+      <DependentUpon>ucMakeContestInfoBet.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="User\ContestInfo.aspx.cs">
+      <DependentUpon>ContestInfo.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="User\ContestInfo.aspx.designer.cs">
+      <DependentUpon>ContestInfo.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="User\Default.aspx.cs">
+      <DependentUpon>Default.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="User\Default.aspx.designer.cs">
+      <DependentUpon>Default.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Errors\ErrorDefault.aspx.cs">
+      <DependentUpon>ErrorDefault.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Errors\ErrorDefault.aspx.designer.cs">
+      <DependentUpon>ErrorDefault.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="User\Stats\Stats.master.cs">
+      <DependentUpon>Stats.master</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="User\Stats\Stats.master.designer.cs">
+      <DependentUpon>Stats.master</DependentUpon>
+    </Compile>
+    <Compile Include="User\Stats\Stats1.aspx.cs">
+      <DependentUpon>Stats1.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="User\Stats\Stats1.aspx.designer.cs">
+      <DependentUpon>Stats1.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="User\Stats\Stats2.aspx.cs">
+      <DependentUpon>Stats2.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="User\Stats\Stats2.aspx.designer.cs">
+      <DependentUpon>Stats2.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="User\Stats\Stats3.aspx.cs">
+      <DependentUpon>Stats3.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="User\Stats\Stats3.aspx.designer.cs">
+      <DependentUpon>Stats3.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="User\Stats\StatsDefault.aspx.cs">
+      <DependentUpon>StatsDefault.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="User\Stats\StatsDefault.aspx.designer.cs">
+      <DependentUpon>StatsDefault.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="zpLogin.Master.cs">
+      <DependentUpon>zpLogin.Master</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="zpLogin.Master.designer.cs">
+      <DependentUpon>zpLogin.Master</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\ucGameBets.ascx.cs">
+      <DependentUpon>ucGameBets.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UserControls\ucGameBets.ascx.designer.cs">
+      <DependentUpon>ucGameBets.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\ucMakeBet.ascx.cs">
+      <DependentUpon>ucMakeBet.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UserControls\ucMakeBet.ascx.designer.cs">
+      <DependentUpon>ucMakeBet.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="User\Bets.aspx.cs">
+      <DependentUpon>Bets.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="User\Bets.aspx.designer.cs">
+      <DependentUpon>Bets.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="User\ChangePassword.aspx.cs">
+      <DependentUpon>ChangePassword.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="User\ChangePassword.aspx.designer.cs">
+      <DependentUpon>ChangePassword.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="User\Games.aspx.cs">
+      <DependentUpon>Games.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="User\Games.aspx.designer.cs">
+      <DependentUpon>Games.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Login.aspx.cs">
+      <DependentUpon>Login.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Login.aspx.designer.cs">
+      <DependentUpon>Login.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Main.Master.cs">
+      <DependentUpon>Main.Master</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Main.Master.designer.cs">
+      <DependentUpon>Main.Master</DependentUpon>
+    </Compile>
+    <Compile Include="Errors\NotFound.aspx.cs">
+      <DependentUpon>NotFound.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Errors\NotFound.aspx.designer.cs">
+      <DependentUpon>NotFound.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Errors\Unauthorized.aspx.cs">
+      <DependentUpon>Unauthorized.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Errors\Unauthorized.aspx.designer.cs">
+      <DependentUpon>Unauthorized.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\ucCalendar.ascx.cs">
+      <DependentUpon>ucCalendar.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UserControls\ucCalendar.ascx.designer.cs">
+      <DependentUpon>ucCalendar.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="User\Ranking.aspx.cs">
+      <DependentUpon>Ranking.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="User\Ranking.aspx.designer.cs">
+      <DependentUpon>Ranking.aspx</DependentUpon>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Admin\AdminAppSettings.aspx" />
+    <Content Include="Admin\AdminAssigningUR.aspx" />
+    <Content Include="Admin\AdminContests.aspx" />
+    <Content Include="Admin\AdminDefault.aspx" />
+    <Content Include="Admin\AdminGames.aspx" />
+    <Content Include="Admin\AdminLeagues.aspx" />
+    <Content Include="Admin\AdminRoles.aspx" />
+    <Content Include="Admin\AdminTeams.aspx" />
+    <Content Include="Admin\AdminUsers.aspx" />
+    <Content Include="Anonymous\ResetPassword.aspx" />
+    <Content Include="App_Themes\Default\bets4fun.css" />
+    <Content Include="App_Themes\Default\clock.css" />
+    <Content Include="App_Themes\Default\Images\banners\badge_bahrain.png" />
+    <Content Include="App_Themes\Default\Images\banners\badge_qatar.png" />
+    <Content Include="App_Themes\Default\Images\euro2016\soccer-ball-on-green-grass-abstract-powerpoint-templates.jpg" />
+    <Content Include="App_Themes\Default\Images\euro2016\soccer-player.jpg" />
+    <Content Include="App_Themes\Default\Images\euro2024\logo.jpg" />
+    <Content Include="App_Themes\Default\Images\euro2024\logo.png" />
+    <Content Include="App_Themes\Default\Images\qatar2022\logo.png" />
+    <Content Include="App_Themes\Default\ModalPopupMakeBet.css" />
+    <Content Include="Anonymous\CreateAccount.aspx" />
+    <Content Include="favicon.ico" />
+    <Content Include="Global.asax" />
+    <Content Include="App_Themes\Default\Images\banners\badge_albania.png" />
+    <Content Include="App_Themes\Default\Images\banners\badge_algeria.png" />
+    <Content Include="App_Themes\Default\Images\banners\badge_andorra.png" />
+    <Content Include="App_Themes\Default\Images\banners\badge_angola.png" />
+    <Content Include="App_Themes\Default\Images\banners\badge_anguilla.png" />
+    <Content Include="App_Themes\Default\Images\banners\badge_antiguabarbuda.png" />
+    <Content Include="App_Themes\Default\Images\banners\badge_argentina.png" />
+    <Content Include="App_Themes\Default\Images\banners\badge_armenia.png" />
+    <Content Include="App_Themes\Default\Images\banners\badge_aruba.png" />
+    <Content Include="App_Themes\Default\Images\banners\badge_australia.png" />
+    <Content Include="App_Themes\Default\Images\banners\badge_austria.png" />
+    <Content Include="App_Themes\Default\Images\banners\badge_azerbaijan.png" />
+    <Content Include="App_Themes\Default\Images\banners\badge_bahamas.png" />
+    <Content Include="App_Themes\Default\Images\banners\badge_barrbados.png" />
+    <Content Include="App_Themes\Default\Images\banners\badge_belgium.png" />
+    <Content Include="App_Themes\Default\Images\banners\badge_belize.png" />
+    <Content Include="App_Themes\Default\Images\banners\badge_benin.png" />
+    <Content Include="App_Themes\Default\Images\banners\badge_bermuda.png" />
+    <Content Include="App_Themes\Default\Images\banners\badge_bolivia.png" />
+    <Content Include="App_Themes\Default\Images\banners\badge_bosnia.png" />
+    <Content Include="App_Themes\Default\Images\banners\badge_bostwana.png" />
+    <Content Include="App_Themes\Default\Images\banners\badge_brasil.png" />
+    <Content Include="App_Themes\Default\Images\banners\badge_britishvirginislands.png" />
+    <Content Include="App_Themes\Default\Images\banners\badge_bulgaria.png" />
+    <Content Include="App_Themes\Default\Images\banners\badge_burkinafaso.png" />
+    <Content Include="App_Themes\Default\Images\banners\badge_burundi.png" />
+    <Content Include="App_Themes\Default\Images\banners\badge_cameroon.png" />
+    <Content Include="App_Themes\Default\Images\banners\badge_canada.png" />
+    <Content Include="App_Themes\Default\Images\banners\badge_capeverdeislands.png" />
+    <Content Include="App_Themes\Default\Images\banners\badge_caymanislands.png" />
+    <Content Include="App_Themes\Default\Images\banners\badge_centralafricanrepublic.png" />
+    <Content Include="App_Themes\Default\Images\banners\badge_chad.png" />
+    <Content Include="App_Themes\Default\Images\banners\badge_chile.png" />
+    <Content Include="App_Themes\Default\Images\banners\badge_colombia.png" />
+    <Content Include="App_Themes\Default\Images\banners\badge_comoros.png" />
+    <Content Include="App_Themes\Default\Images\banners\badge_congo.png" />
+    <Content Include="App_Themes\Default\Images\banners\badge_congodr.png" />
+    <Content Include="App_Themes\Default\Images\banners\badge_costarica.png" />
+    <Content Include="App_Themes\Default\Images\banners\badge_croatia.png" />
+    <Content Include="App_Themes\Default\Images\banners\badge_cuba.png" />
+    <Content Include="App_Themes\Default\Images\banners\badge_curacao.png" />
+    <Content Include="App_Themes\Default\Images\banners\badge_cyprous.png" />
+    <Content Include="App_Themes\Default\Images\banners\badge_czech.png" />
+    <Content Include="App_Themes\Default\Images\banners\badge_denmark.png" />
+    <Content Include="App_Themes\Default\Images\banners\badge_djibouti.png" />
+    <Content Include="App_Themes\Default\Images\banners\badge_dominica.png" />
+    <Content Include="App_Themes\Default\Images\banners\badge_dominicanrepublic.png" />
+    <Content Include="App_Themes\Default\Images\banners\badge_ecuador.png" />
+    <Content Include="App_Themes\Default\Images\banners\badge_egypt.png" />
+    <Content Include="App_Themes\Default\Images\banners\badge_elsalvador.png" />
+    <Content Include="App_Themes\Default\Images\banners\badge_england.png" />
+    <Content Include="App_Themes\Default\Images\banners\badge_equationalguinea.png" />
+    <Content Include="App_Themes\Default\Images\banners\badge_eritrea.png" />
+    <Content Include="App_Themes\Default\Images\banners\badge_estonia.png" />
+    <Content Include="App_Themes\Default\Images\banners\badge_ethiopia.png" />
+    <Content Include="App_Themes\Default\Images\banners\badge_faroeislands.png" />
+    <Content Include="App_Themes\Default\Images\banners\badge_finland.png" />
+    <Content Include="App_Themes\Default\Images\banners\badge_france.png" />
+    <Content Include="App_Themes\Default\Images\banners\badge_gabon.png" />
+    <Content Include="App_Themes\Default\Images\banners\badge_gambia.png" />
+    <Content Include="App_Themes\Default\Images\banners\badge_georgia.png" />
+    <Content Include="App_Themes\Default\Images\banners\badge_germany.png" />
+    <Content Include="App_Themes\Default\Images\banners\badge_ghana.png" />
+    <Content Include="App_Themes\Default\Images\banners\badge_greece.png" />
+    <Content Include="App_Themes\Default\Images\banners\badge_grenada.png" />
+    <Content Include="App_Themes\Default\Images\banners\badge_guatemala.png" />
+    <Content Include="App_Themes\Default\Images\banners\badge_guinea.png" />
+    <Content Include="App_Themes\Default\Images\banners\badge_guineabissau.png" />
+    <Content Include="App_Themes\Default\Images\banners\badge_guyana.png" />
+    <Content Include="App_Themes\Default\Images\banners\badge_haiti.png" />
+    <Content Include="App_Themes\Default\Images\banners\badge_honduras.png" />
+    <Content Include="App_Themes\Default\Images\banners\badge_hungary.png" />
+    <Content Include="App_Themes\Default\Images\banners\badge_iceland.png" />
+    <Content Include="App_Themes\Default\Images\banners\badge_iran.png" />
+    <Content Include="App_Themes\Default\Images\banners\badge_israel.png" />
+    <Content Include="App_Themes\Default\Images\banners\badge_italy.png" />
+    <Content Include="App_Themes\Default\Images\banners\badge_ivore.png" />
+    <Content Include="App_Themes\Default\Images\banners\badge_jamaica.png" />
+    <Content Include="App_Themes\Default\Images\banners\badge_japan.png" />
+    <Content Include="App_Themes\Default\Images\banners\badge_jordan.png" />
+    <Content Include="App_Themes\Default\Images\banners\badge_kazakhstan.png" />
+    <Content Include="App_Themes\Default\Images\banners\badge_kenia.png" />
+    <Content Include="App_Themes\Default\Images\banners\badge_kenya.png" />
+    <Content Include="App_Themes\Default\Images\banners\badge_korearepublic.png" />
+    <Content Include="App_Themes\Default\Images\banners\badge_latvia.png" />
+    <Content Include="App_Themes\Default\Images\banners\badge_lesotho.png" />
+    <Content Include="App_Themes\Default\Images\banners\badge_liberia.png" />
+    <Content Include="App_Themes\Default\Images\banners\badge_libya.png" />
+    <Content Include="App_Themes\Default\Images\banners\badge_lichtenstein.png" />
+    <Content Include="App_Themes\Default\Images\banners\badge_lithuania.png" />
+    <Content Include="App_Themes\Default\Images\banners\badge_luxembourg.png" />
+    <Content Include="App_Themes\Default\Images\banners\badge_macedonia.png" />
+    <Content Include="App_Themes\Default\Images\banners\badge_madagascar.png" />
+    <Content Include="App_Themes\Default\Images\banners\badge_malawi.png" />
+    <Content Include="App_Themes\Default\Images\banners\badge_mali.png" />
+    <Content Include="App_Themes\Default\Images\banners\badge_malta.png" />
+    <Content Include="App_Themes\Default\Images\banners\badge_mexico.png" />
+    <Content Include="App_Themes\Default\Images\banners\badge_moldova.png" />
+    <Content Include="App_Themes\Default\Images\banners\badge_montenegro.png" />
+    <Content Include="App_Themes\Default\Images\banners\badge_montserrat.png" />
+    <Content Include="App_Themes\Default\Images\banners\badge_morocco.png" />
+    <Content Include="App_Themes\Default\Images\banners\badge_mozambique.png" />
+    <Content Include="App_Themes\Default\Images\banners\badge_namibia.png" />
+    <Content Include="App_Themes\Default\Images\banners\badge_netherlands.png" />
+    <Content Include="App_Themes\Default\Images\banners\badge_nicaragua.png" />
+    <Content Include="App_Themes\Default\Images\banners\badge_niger.png" />
+    <Content Include="App_Themes\Default\Images\banners\badge_nigeria.png" />
+    <Content Include="App_Themes\Default\Images\banners\badge_northireland.png" />
+    <Content Include="App_Themes\Default\Images\banners\badge_norway.png" />
+    <Content Include="App_Themes\Default\Images\banners\badge_nzl.png" />
+    <Content Include="App_Themes\Default\Images\banners\badge_panama.png" />
+    <Content Include="App_Themes\Default\Images\banners\badge_paraguay.png" />
+    <Content Include="App_Themes\Default\Images\banners\badge_peru.png" />
+    <Content Include="App_Themes\Default\Images\banners\badge_poland.png" />
+    <Content Include="App_Themes\Default\Images\banners\badge_portugal.png" />
+    <Content Include="App_Themes\Default\Images\banners\badge_puertorico.png" />
+    <Content Include="App_Themes\Default\Images\banners\badge_repofireland.png" />
+    <Content Include="App_Themes\Default\Images\banners\badge_romania.png" />
+    <Content Include="App_Themes\Default\Images\banners\badge_rpa.png" />
+    <Content Include="App_Themes\Default\Images\banners\badge_russia.png" />
+    <Content Include="App_Themes\Default\Images\banners\badge_rwanda.png" />
+    <Content Include="App_Themes\Default\Images\banners\badge_sanmarino.png" />
+    <Content Include="App_Themes\Default\Images\banners\badge_saotomeeprincipe.png" />
+    <Content Include="App_Themes\Default\Images\banners\badge_saudi.arabia.png" />
+    <Content Include="App_Themes\Default\Images\banners\badge_scotland.png" />
+    <Content Include="App_Themes\Default\Images\banners\badge_senegal.png" />
+    <Content Include="App_Themes\Default\Images\banners\badge_serbia.png" />
+    <Content Include="App_Themes\Default\Images\banners\badge_seychelles.png" />
+    <Content Include="App_Themes\Default\Images\banners\badge_sierraleone.png" />
+    <Content Include="App_Themes\Default\Images\banners\badge_slovakia.png" />
+    <Content Include="App_Themes\Default\Images\banners\badge_slovenia.png" />
+    <Content Include="App_Themes\Default\Images\banners\badge_somalia.png" />
+    <Content Include="App_Themes\Default\Images\banners\badge_spain.png" />
+    <Content Include="App_Themes\Default\Images\banners\badge_stkittsandnevis.png" />
+    <Content Include="App_Themes\Default\Images\banners\badge_stlucia.png" />
+    <Content Include="App_Themes\Default\Images\banners\badge_stvincentandgrenadines.png" />
+    <Content Include="App_Themes\Default\Images\banners\badge_sudan.png" />
+    <Content Include="App_Themes\Default\Images\banners\badge_suriname.png" />
+    <Content Include="App_Themes\Default\Images\banners\badge_swaziland.png" />
+    <Content Include="App_Themes\Default\Images\banners\badge_sweden.png" />
+    <Content Include="App_Themes\Default\Images\banners\badge_switzerland.png" />
+    <Content Include="App_Themes\Default\Images\banners\badge_tanzania.png" />
+    <Content Include="App_Themes\Default\Images\banners\badge_togo.png" />
+    <Content Include="App_Themes\Default\Images\banners\badge_trinidatandtobago.png" />
+    <Content Include="App_Themes\Default\Images\banners\badge_tunisia.png" />
+    <Content Include="App_Themes\Default\Images\banners\badge_turkey.png" />
+    <Content Include="App_Themes\Default\Images\banners\badge_turksandcaicosislands.png" />
+    <Content Include="App_Themes\Default\Images\banners\badge_uganda.png" />
+    <Content Include="App_Themes\Default\Images\banners\badge_ukraine.png" />
+    <Content Include="App_Themes\Default\Images\banners\badge_uruguay.png" />
+    <Content Include="App_Themes\Default\Images\banners\badge_usa.png" />
+    <Content Include="App_Themes\Default\Images\banners\badge_venezuela.png" />
+    <Content Include="App_Themes\Default\Images\banners\badge_virginislands.png" />
+    <Content Include="App_Themes\Default\Images\banners\badge_wales.png" />
+    <Content Include="App_Themes\Default\Images\banners\badge_zimbabwe.png" />
+    <Content Include="App_Themes\Default\Images\edit.svg" />
+    <Content Include="App_Themes\Default\Images\help\help_points_en.png" />
+    <Content Include="App_Themes\Default\Images\help\help_weight_en.png" />
+    <Content Include="App_Themes\Default\Images\list.svg" />
+    <Content Include="App_Themes\Default\Images\orderedlist\orderedList0.png" />
+    <Content Include="App_Themes\Default\Images\orderedlist\orderedList1.png" />
+    <Content Include="App_Themes\Default\Images\orderedlist\orderedList2.png" />
+    <Content Include="App_Themes\Default\Images\orderedlist\orderedList3.png" />
+    <Content Include="App_Themes\Default\Images\orderedlist\orderedList4.png" />
+    <Content Include="App_Themes\Default\Images\orderedlist\orderedList5.png" />
+    <Content Include="App_Themes\Default\Images\orderedlist\orderedList6.png" />
+    <Content Include="App_Themes\Default\Images\orderedlist\orderedList7.png" />
+    <Content Include="App_Themes\Default\Images\orderedlist\orderedList8.png" />
+    <Content Include="App_Themes\Default\Images\orderedlist\orderedList9.png" />
+    <Content Include="mail_formats\reset_password.txt" />
+    <Content Include="mail_formats\create_user_mail.txt" />
+    <Content Include="Anonymous\AccountVerify.aspx" />
+    <Content Include="packages.config">
+      <SubType>Designer</SubType>
+    </Content>
+    <Content Include="Scripts\calendar.js" />
+    <Content Include="Scripts\clock.js" />
+    <Content Include="Scripts\common.js" />
+    <Content Include="Api\Web.config" />
+    <None Include="Properties\PublishProfiles\FolderProfile.pubxml" />
+    <None Include="Scripts\jquery-3.3.1.intellisense.js" />
+    <Content Include="Scripts\jquery-3.3.1.js" />
+    <Content Include="Scripts\jquery-3.3.1.min.js" />
+    <Content Include="Scripts\jquery-3.3.1.slim.js" />
+    <Content Include="Scripts\jquery-3.3.1.slim.min.js" />
+    <Content Include="UserControls\ucMakeContestInfoBet.ascx" />
+    <Content Include="User\ContestInfo.aspx" />
+    <Content Include="User\Default.aspx" />
+    <Content Include="Errors\ErrorDefault.aspx" />
+    <Content Include="App_Themes\Default\Images\cross_icon_normal.png" />
+    <Content Include="UserControls\ucGameBets.ascx" />
+    <Content Include="UserControls\ucMakeBet.ascx" />
+    <Content Include="User\Bets.aspx" />
+    <Content Include="User\ChangePassword.aspx" />
+    <Content Include="User\Games.aspx" />
+    <Content Include="Login.aspx" />
+    <Content Include="Errors\NotFound.aspx" />
+    <Content Include="Errors\Unauthorized.aspx" />
+    <Content Include="UserControls\ucCalendar.ascx" />
+    <Content Include="User\Ranking.aspx" />
+    <Content Include="Admin\Web.config" />
+    <Content Include="Admin\WebAdmin.sitemap" />
+    <Content Include="Admin\Admin.master" />
+    <Content Include="App_Themes\Default\Web.config" />
+    <None Include="DB.xsc">
+      <DependentUpon>DB.xsd</DependentUpon>
+    </None>
+    <None Include="DB.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>DB.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="DB.xss">
+      <DependentUpon>DB.xsd</DependentUpon>
+    </None>
+    <Content Include="User\Stats\Stats1.aspx" />
+    <Content Include="User\Stats\Stats2.aspx" />
+    <Content Include="User\Stats\Stats3.aspx" />
+    <Content Include="User\Stats\StatsDefault.aspx" />
+    <Content Include="Web.config">
+      <SubType>Designer</SubType>
+    </Content>
+    <Content Include="Anonymous\Web.config" />
+    <Content Include="Main.Master" />
+    <Content Include="WebMain.sitemap">
+      <SubType>Designer</SubType>
+    </Content>
+    <Content Include="zpLogin.Master" />
+    <Content Include="User\Web.config" />
+    <Content Include="Errors\Web.config" />
+    <None Include="Properties\PublishProfiles\Profile1.pubxml" />
+    <Content Include="Scripts\Web.config" />
+    <Content Include="User\Stats\Stats.master" />
+    <Content Include="User\Stats\Web.config" />
+    <Content Include="User\Stats\WebStats.sitemap" />
+    <Content Include="Scripts\jquery-3.3.1.slim.min.map" />
+    <Content Include="Scripts\jquery-3.3.1.min.map" />
+  </ItemGroup>
+  <ItemGroup />
+  <ItemGroup>
+    <Content Include="User\App_LocalResources\ChangePassword.aspx.resx" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="User\App_LocalResources\ChangePassword.aspx.en.resx" />
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{4A0DDDB5-7A95-4FBF-97CC-616D07737A77}" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Bets4Fun.Services\Bets4Fun.Services.csproj">
+      <Project>{11223063-355e-4905-b3a1-9caaf89ce698}</Project>
+      <Name>Bets4Fun.Services</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <PropertyGroup>
+    <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
+    <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
+  </PropertyGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)\TypeScript\Microsoft.TypeScript.targets" Condition="Exists('$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)\TypeScript\Microsoft.TypeScript.targets')" />
+  <Import Project="$(VSToolsPath)\WebApplications\Microsoft.WebApplication.targets" Condition="'$(VSToolsPath)' != ''" />
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" Condition="false" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+  <ProjectExtensions>
+    <VisualStudio>
+      <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}">
+        <WebProjectProperties>
+          <UseIIS>True</UseIIS>
+          <AutoAssignPort>True</AutoAssignPort>
+          <DevelopmentServerPort>1397</DevelopmentServerPort>
+          <DevelopmentServerVPath>/</DevelopmentServerVPath>
+          <IISUrl>http://localhost:5000</IISUrl>
+          <NTLMAuthentication>False</NTLMAuthentication>
+          <UseCustomServer>False</UseCustomServer>
+          <CustomServerUrl>
+          </CustomServerUrl>
+          <SaveServerSettingsInUserFile>False</SaveServerSettingsInUserFile>
+        </WebProjectProperties>
+      </FlavorProperties>
+    </VisualStudio>
+  </ProjectExtensions>
+</Project>

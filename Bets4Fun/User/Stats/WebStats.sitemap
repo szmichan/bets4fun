@@ -1,0 +1,11 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<siteMap xmlns="http://schemas.microsoft.com/AspNet/SiteMap-File-1.0" >
+  <siteMapNode url="~/User/Stats/StatsDefault.aspx" title="Admin"  description="" roles="User">
+    <siteMapNode url="~/User/Stats/Stats1.aspx" title="Mecze"  description="Mecze">
+    </siteMapNode>
+    <siteMapNode url="~/User/Stats/Stats2.aspx" title="Użytkownicy"  description="Użytkownicy">
+    </siteMapNode>
+    <siteMapNode url="~/User/Stats/Stats3.aspx" title="Zakłady"  description="Zakłady">
+    </siteMapNode>
+  </siteMapNode>
+</siteMap>

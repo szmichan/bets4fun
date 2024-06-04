@@ -1,0 +1,370 @@
+﻿.text-small {
+    font-size: 0.8rem;
+}
+
+body {
+    background: linear-gradient(to bottom, rgba(255,255,255,0.5) 0, rgba(255,255,255,0.5) 100%), url(Images/euro2016/soccer-ball-on-green-grass-abstract-powerpoint-templates.jpg);
+    background-size: cover;
+    font-family: "Segoe UI",Verdana,Helvetica,Sans-Serif;
+}
+
+.footer {
+    position: fixed;
+    bottom: 0;
+    text-align: left;
+    width: 100%;
+    background-color: #F1FEED;
+    padding-left: 10px;
+}
+.login-flex-container {
+    display: flex;
+    flex-direction: row;
+    margin: 100px 0px 0px 0px;
+    min-width: 375px;
+    justify-content: center;
+}
+
+.login-flex-left {
+    text-align: right;
+    height:100%;
+}
+
+.login-flex-right-inner {
+    width: 320px;
+    background-color: rgba(121, 163, 63, 0.7);
+    padding: 10px;
+    height: 400px;
+}
+
+.login-image > img {
+    max-height: 400px;
+}
+
+.login-options {
+    position: absolute;
+    bottom: 0;
+}
+
+@media only screen and (max-width: 767px) {
+    .login-flex-container {
+        flex-direction: column;
+        margin: 0;
+        width: auto;
+    }
+
+    .login-flex-left {
+        text-align: left;
+    }
+
+    .login-flex-right {
+        margin-top: 5px;
+        background-color: rgba(121, 163, 63, 0.7);
+    }
+
+    .login-flex-right-inner {
+        background-color: transparent;
+        width: 100%;
+        max-width: 570px;
+    }
+
+    .login-image {
+        background-color: rgba(121, 163, 63, 0.7);
+    }
+
+        .login-image > img {
+            max-width: 100%;
+        }
+
+    .login-options {
+        bottom: 15px;
+    }
+}
+
+.input-group-addon {
+    padding: .375rem .75rem;
+    margin-bottom: 0;
+    font-size: 1rem;
+    font-weight: 400;
+    line-height: 1.5;
+    color: #495057;
+    text-align: center;
+    background-color: #e9ecef;
+    border: 1px solid #ced4da;
+}
+
+.fs-xx-small {
+    font-size: xx-small;
+}
+
+
+/*MAIN*/
+
+.main-flex-container {
+    display: flex;
+    flex-direction: column
+}
+
+.main-flex-top
+{
+    text-align:center;
+}
+
+div.top-image {
+    margin-top: 10px;
+
+}
+    div.top-image > img {
+        max-height: 300px;
+    }
+
+.dropdown-item {
+    padding-left: 10px;
+}
+
+.nav-item.active {
+    background-color: #494a46 !important;
+}
+
+.nav-item:hover {
+    background-color: #565753 !important;
+}
+
+.main-menu {
+    margin-top: 50px;
+    padding: 0;
+    z-index: 1;
+}
+
+.navbar-nav .nav-item {
+    height: 60px;
+    line-height: 2.5rem;
+    padding-left: 10px;
+    padding-right: 10px;
+    font-size: 18px;
+}
+
+.custom-toggler {
+    height: 60px;
+    width: 60px;
+}
+
+.navbar-brand {
+    padding-left: 10px;
+}
+
+@media (min-width: 992px) {
+    .navbar-brand {
+        display:none;
+    }
+}
+
+/*NAVBAR*/
+
+
+.main-subtitle {
+    text-align: center;
+    width: 100%;
+}
+
+.main-content {
+    margin-top: 50px;
+}
+
+.footer {
+    position: fixed;
+    bottom: 0;
+    text-align: left;
+    width: 100%;
+    background-color: #F1FEED;
+}
+
+.rules-items {
+    margin-left: 50px;
+    margin-right: 50px;
+}
+
+.rules-item-title {
+    text-decoration: underline;
+    font-weight: bold;
+}
+
+ol.rules-item-list {
+    list-style-type: none;
+}
+
+    ol.rules-item-list li {
+        margin: 15px 0;
+        padding-left: 45px;
+        padding-top: 5px;
+        min-height: 30px;
+    }
+
+        ol.rules-item-list li.one {
+            background: url(Images/orderedlist/orderedList1.png) no-repeat scroll 0 0 rgba(0, 0, 0, 0);
+        }
+
+        ol.rules-item-list li.two {
+            background: url(Images/orderedlist/orderedList2.png) no-repeat scroll 0 0 rgba(0, 0, 0, 0);
+        }
+
+        ol.rules-item-list li.three {
+            background: url(Images/orderedlist/orderedList3.png) no-repeat scroll 0 0 rgba(0, 0, 0, 0);
+        }
+
+        ol.rules-item-list li.four {
+            background: url(Images/orderedlist/orderedList4.png) no-repeat scroll 0 0 rgba(0, 0, 0, 0);
+        }
+
+        ol.rules-item-list li.five {
+            background: url(Images/orderedlist/orderedList5.png) no-repeat scroll 0 0 rgba(0, 0, 0, 0);
+        }
+
+.rules-item-info {
+    cursor: help;
+    background-color: #C7E2E2;
+    border:2px solid #FF0066;
+    font-weight: bold;
+    font-size: 20px;
+    width: fit-content;
+}
+
+@media only screen and (max-width: 790px) {
+    div .top-image > img {
+        height: auto;
+        max-width: 100vw;
+    }
+
+    .rules-items {
+        margin-left: 10px;
+        margin-right: 10px;
+    }
+}
+
+.sheen {
+    position: relative;
+    overflow: hidden;
+}
+
+    .sheen:after {
+        animation: sheen 5s 4s forwards infinite;
+        content: '';
+        position: absolute;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        left: 0;
+        background: linear-gradient(to bottom, transparent, rgba(255,255,255,0.5) 50%, transparent);
+        transform: rotateZ(60deg) translate(-1em, 4em);
+    }
+
+@keyframes sheen {
+    /* Finish changes by here */
+    20% {
+        transform: rotateZ(90deg) translate(0, -4em);
+    }
+    /* Between 20% and 100%, nothing changes */
+    100% {
+        transform: rotateZ(90deg) translate(0, -4em);
+    }
+}
+
+.tooltip {
+    opacity: 1 !important;
+}
+
+.tooltip-inner {
+    max-width: 500px !important;
+}
+
+.tooltip-help-points {
+    width: 258px;
+    height: 53px;
+    background-image: url(Images/help/help_points_en.png);
+}
+
+.tooltip-help-weights {
+    width: 258px;
+    height: 53px;
+    background-image: url(Images/help/help_weight_en.png);
+}
+
+
+/*GRID PAGER*/
+
+.pagerHeader th {
+    border: 1px solid black;
+}
+
+.pagerHeader td {
+    border: 1px solid black;
+}
+
+    .pagerHeader td table tbody td {
+        border: 0 solid black;
+        width: 60px;
+        height: 60px;
+        font-size: xx-large;
+        font-weight: bold;
+    }
+
+        .pagerHeader td table tbody td a, .pagerHeader td table tbody td span {
+            display: inline-block;
+            height: 100%;
+            width: 100%;
+            text-align: center;
+            border: 1px solid black;
+            padding-top: 3px;
+        }
+
+        .pagerHeader td table tbody td span {
+            background-color: green;
+        }
+
+        .pagerHeader td table tbody td a {
+            text-decoration: none;
+        }
+
+        .pagerHeader td table tbody td a:hover {
+            background-color: #17a2b8;
+        }
+
+
+/*GRID PAGER*/
+
+.max-width-300 {
+    max-width: 300px;
+}
+
+.classification-container {
+    display: flex;
+    flex-direction: column;
+    margin: 100px 0px 0px 0px;
+    min-width: 375px;
+    justify-content: center;
+    padding:20px;
+}
+
+.line-heigt-2 {
+    line-height: 2rem;
+}
+
+.datepicker {
+    padding-left: 20px
+}
+
+.all-bets--users-bets {
+    width:100% !important;
+}
+
+@media (max-width:992px) and (min-width:700px) {
+    .modal-lg {
+        max-width: 600px;
+    }
+}
+
+@media (max-width: 375px) {
+    .fantasy-img {
+        width: 100%;
+        height: auto;
+    }
+}

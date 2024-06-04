@@ -1,0 +1,66 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="zpLogin.Master.cs" Inherits="Bets4Fun.ZpLogin" EnableTheming="true" %>
+<%@ Register Assembly="AjaxControlToolkit" Namespace="AjaxControlToolkit" TagPrefix="ajaxToolkit" %>
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 4.01 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html>
+<head runat="server">
+    <title>Bets4Fun</title>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"> 
+
+    <script type="text/javascript" src="/Scripts/jquery-3.3.1.min.js"></script>
+    <script type="text/javascript" src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+
+    <link type="text/css" rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+    <link type="text/css" rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.8/css/all.css">
+    <link type="text/css" rel="stylesheet" href="../App_Themes/Default/bets4fun.css?v=<%= "" + Bets4Fun.AssemblyHelper.AssemblyVersion %>"  />
+
+    <asp:ContentPlaceHolder ID="head" runat="server">
+    </asp:ContentPlaceHolder>
+</head>
+<body>
+    <form id="form1" runat="server" class="needs-validation" novalidate>
+        <ajaxToolkit:ToolkitScriptManager runat="Server" ID="ScriptManager1" EnableScriptGlobalization="true" EnableScriptLocalization="true" />
+        <div class="login-flex-container">
+            <div class="login-flex-left">
+                <div class="login-image">
+                    <img alt="logo" src="/App_Themes/Default/Images/euro2016/soccer-player.jpg" style="" />
+                </div>
+                <div class="fs-xx-small">
+                    <span>
+                        <a href="http://www.vectoropenstock.com/vectors/preview/70048/soccer-player-in-brasil-2014-background" target="_blank">"Soccer Player in Brasil 2014 Background"
+                        </a>
+                        designed by 
+                            <a href="http://www.vectoropenstock.com/user/3/vector-open-stock" target="_blank">Vector Open Stock
+                            </a>
+                        , used under 
+                            <a href="http://creativecommons.org/licenses/by/3.0/" target="_blank">CC BY
+                            </a>
+                    </span>
+                </div>
+            </div>
+
+            <div class="login-flex-right">
+                <div class="login-flex-right-inner">
+                    <asp:ContentPlaceHolder ID="LoginMainContent" runat="server">
+                    </asp:ContentPlaceHolder>
+                </div>
+            </div>
+            <div>
+            </div>
+        </div>
+
+        <footer class="footer">
+            <asp:Label ID="Label2" runat="server" Text=""></asp:Label>
+        </footer>
+        <script>
+            $(function () {
+                $('form').nextAll().remove();
+            });
+        </script>
+    </form>
+
+</body>
+
+</html>

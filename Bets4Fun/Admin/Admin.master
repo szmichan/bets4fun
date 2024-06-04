@@ -1,0 +1,18 @@
+﻿<%@ Master Language="C#" MasterPageFile="~/Main.Master" AutoEventWireup="true" CodeBehind="Admin.master.cs" Inherits="Bets4Fun.Admin.Admin" %>
+
+<asp:Content ID="HeadContent" ContentPlaceHolderID="MainHeadCPH" runat="server">
+    <asp:ContentPlaceHolder ID="AdminHeadCPH" runat="server">
+    </asp:ContentPlaceHolder>
+</asp:Content>
+<asp:Content ID="SubtitleContent" ContentPlaceHolderID="MainSubtitleCPH" runat="server">
+    <h2 class="mt-4">
+        <asp:ContentPlaceHolder ID="AdminSubtitleCPH" runat="server"></asp:ContentPlaceHolder>
+    </h2>
+    <hr />
+</asp:Content>
+<asp:Content ID="MainContent" ContentPlaceHolderID="MainMainCPH" runat="server">
+    <div class="px-4">
+        <asp:ContentPlaceHolder ID="AdminMainCPH" runat="server">
+        </asp:ContentPlaceHolder>
+    </div>
+</asp:Content>
