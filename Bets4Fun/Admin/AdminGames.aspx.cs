@@ -124,13 +124,13 @@ namespace Bets4Fun.Admin
                 var ddlTeam1 = (DropDownList)DetailsView1.FindControl("ddlTeam1");
                 if (ddlTeam1 != null && ddlTeam1.SelectedIndex > 0)
                 {
-                    e.InputParameters["Team1_Id"] = int.Parse(ddlTeam1.SelectedValue);
+                    e.InputParameters["Team1Id"] = int.Parse(ddlTeam1.SelectedValue);
                 }
 
                 var ddlTeam2 = (DropDownList)DetailsView1.FindControl("ddlTeam2");
                 if (ddlTeam2 != null && ddlTeam2.SelectedIndex > 0)
                 {
-                    e.InputParameters["Team2_Id"] = int.Parse(ddlTeam2.SelectedValue);
+                    e.InputParameters["Team2Id"] = int.Parse(ddlTeam2.SelectedValue);
                 }
             }
             else

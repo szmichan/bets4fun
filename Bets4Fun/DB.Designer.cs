@@ -11766,7 +11766,7 @@ VALUES        (@Contest_Id,@Team1_Id,@Team2_Id,@GameDate,@Team1Score,@Team2Score
             this._adapter.UpdateCommand.CommandText = @"UPDATE       Games
 SET                Contest_Id = @Contest_Id, Team1_Id = @Team1_Id, Team2_Id = @Team2_Id, GameDate = @GameDate, Team1Score = @Team1Score, 
                          Team2Score = @Team2Score, Description = @Description, Team1Points = @Team1Points, Team2Points = @Team2Points, DrawPoints = @DrawPoints, 
-                         MultiplyValue = @MultiplyValue, Team1_Alternate = @Team1_Alternate, Team2_Alternate = @Team2_Alternate, ExternalStatus = @ExternalStatus
+                         MultiplyValue = isnull(@MultiplyValue, 1), Team1_Alternate = @Team1_Alternate, Team2_Alternate = @Team2_Alternate, ExternalStatus = @ExternalStatus
 WHERE        (Id = @Original_Id)";
             this._adapter.UpdateCommand.CommandType = global::System.Data.CommandType.Text;
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Contest_Id", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 0, 0, "Contest_Id", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
@@ -11799,15 +11799,17 @@ WHERE        (Id = @Original_Id)";
             this._commandCollection = new global::System.Data.SqlClient.SqlCommand[10];
             this._commandCollection[0] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[0].Connection = this.Connection;
-            this._commandCollection[0].CommandText = @"SELECT        Games.Id, Games.Contest_Id, Games.Contest_Id as ContestId, c.Name AS Contest_Name, Games.Team1_Id, ISNULL(t1.Name, Games.Team1_Alternate) AS Team1_Name, Games.Team2_Id, 
-                         ISNULL(t2.Name, Games.Team2_Alternate) AS Team2_Name, Games.GameDate, Games.Team1Score, Games.Team2Score, Games.Description, 0 AS IsBet, 
-                         ISNULL(CONVERT(varchar(16), Games.GameDate, 120), '') + '|' + c.Name + '|' + t1.Name + ':' + t2.Name AS GameFullName, Games.Team1Points, 
-                         Games.Team2Points, Games.DrawPoints, Games.MultiplyValue, Games.Team1_Alternate, Games.Team2_Alternate, Games.ExternalId, Games.ExternalStatus
-FROM            Games LEFT OUTER JOIN
-                         Contests AS c ON Games.Contest_Id = c.Id LEFT OUTER JOIN
-                         Teams AS t1 ON Games.Team1_Id = t1.Id LEFT OUTER JOIN
-                         Teams AS t2 ON Games.Team2_Id = t2.Id
-ORDER BY Games.GameDate";
+            this._commandCollection[0].CommandText = @"
+	                    SELECT        Games.Id, Games.Contest_Id, Games.Contest_Id as ContestId, c.Name AS Contest_Name, Games.Team1_Id, Games.Team1_Id as Team1Id, ISNULL(t1.Name, Games.Team1_Alternate) AS Team1_Name, Games.Team2_Id, Games.Team2_Id as Team2Id,
+	                    ISNULL(t2.Name, Games.Team2_Alternate) AS Team2_Name, Games.GameDate, Games.Team1Score, Games.Team2Score, Games.Description, 0 AS IsBet,
+	                    ISNULL(CONVERT(varchar(16), Games.GameDate, 120), '') + '|' + c.Name + '|' + t1.Name + ':' + t2.Name AS GameFullName, Games.Team1Points,
+	                    Games.Team2Points, Games.DrawPoints, Games.MultiplyValue, Games.Team1_Alternate as Team1Alternate, Games.Team2_Alternate as Team2Alternate, Games.ExternalId, Games.ExternalStatus
+	                    FROM            Games LEFT OUTER JOIN
+	                    Contests AS c ON Games.Contest_Id = c.Id LEFT OUTER JOIN
+	                    Teams AS t1 ON Games.Team1_Id = t1.Id LEFT OUTER JOIN
+	                    Teams AS t2 ON Games.Team2_Id = t2.Id
+	                    ORDER BY Games.GameDate
+					";
             this._commandCollection[0].CommandType = global::System.Data.CommandType.Text;
             this._commandCollection[1] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[1].Connection = this.Connection;

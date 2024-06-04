@@ -148,7 +148,7 @@
             <CommandRowStyle BackColor="#EAF4FF" Font-Bold="True" />
             <FieldHeaderStyle Font-Bold="True" ForeColor="Black" Width="30%" />
             <Fields>
-                <asp:TemplateField HeaderText="Contest" SortExpression="Contest_Name">
+                <asp:TemplateField HeaderText="Contest">
                     <EditItemTemplate>
                         <asp:DropDownList ID="DropDownList1" runat="server" DataSourceID="ContestsDS" DataTextField="Name"
                             DataValueField="Id" SelectedValue='<%# Bind("ContestId") %>' Width="250px">
@@ -159,22 +159,16 @@
                             DataValueField="Id" SelectedValue='<%# Bind("ContestId") %>' Width="250px">
                         </asp:DropDownList>
                     </InsertItemTemplate>
-<%--                    <ItemTemplate>
-                        <asp:Label ID="Label3" runat="server" Text='<%# Bind("ContestName") %>'></asp:Label>
-                    </ItemTemplate>--%>
                 </asp:TemplateField>
-                <asp:TemplateField HeaderText="Date" SortExpression="GameDate">
+                <asp:TemplateField HeaderText="Date">
                     <EditItemTemplate>
                         <uc1:ucCalendar ID="ucCalendar1" runat="server" Required="True" SelectedDate='<%# DateConverter.ConvertToCest((DateTimeOffset)Eval("GameDate")).ToString("yyyy-MM-dd") %>' />
                     </EditItemTemplate>
                     <InsertItemTemplate>
                         <uc1:ucCalendar ID="ucCalendar1" runat="server" SelectedDate='' Required="True" />
                     </InsertItemTemplate>
-<%--                    <ItemTemplate>
-                        <asp:Label ID="Label2" runat="server" Text='<%# DateConverter.ConvertToCest((DateTimeOffset)Eval("GameDate")).ToString("yyyy-MM-dd") %>'></asp:Label>
-                    </ItemTemplate>--%>
                 </asp:TemplateField>
-                <asp:TemplateField HeaderText="Time" SortExpression="GameDate">
+                <asp:TemplateField HeaderText="Time">
                     <EditItemTemplate>
                         <asp:TextBox ID="EditTimeTB" runat="server" Text='<%#DateConverter.ConvertToCest((DateTimeOffset)Eval("GameDate")).ToString("HH:mm") %>' Width="70px"></asp:TextBox>
                         <asp:RegularExpressionValidator ID="EditGameTimeRegRexValidator" runat="server" ErrorMessage="* invalid time"
@@ -187,40 +181,30 @@
                         <asp:RegularExpressionValidator Display="Dynamic" ID="InsertGameTimeRegRexValidator" runat="server"
                             ErrorMessage="* invalid time" ControlToValidate="InsertTimeTB" ValidationExpression="(([0-1]?\d)|([2][0-3]))(:[0-5]+\d)"></asp:RegularExpressionValidator>
                     </InsertItemTemplate>
-<%--                    <ItemTemplate>
-                        <asp:Label ID="GameTimeLabel" runat="server" Text='<%#DateConverter.ConvertToCest((DateTimeOffset)Eval("GameDate")).ToString("HH:mm") %>'></asp:Label>
-                    </ItemTemplate>--%>
                 </asp:TemplateField>
-                <asp:TemplateField HeaderText="Host team" SortExpression="Team1_Name">
+                <asp:TemplateField HeaderText="Host team">
                     <EditItemTemplate>
                         <asp:DropDownList ID="ddlTeam1" runat="server" DataSourceID="TeamsDS" DataTextField="Name"
+                            DataValueField="Id" OnDataBound="ddlTeam1_DataBound" />
+                        <asp:TextBox ID="tbTeam1Alternate" runat="server" Text='<%# Bind("Team1Alternate") %>' />
+                    </EditItemTemplate>
+                    <InsertItemTemplate>
+                        <asp:DropDownList ID="ddlTeam1" runat="server" DataSourceID="TeamsDS" DataTextField="Name" 
                             DataValueField="Id" OnDataBound="ddlTeam1_DataBound" SelectedValue='<%# Bind("Team1Id") %>' />
                         <asp:TextBox ID="tbTeam1Alternate" runat="server" Text='<%# Bind("Team1Alternate") %>' />
-                    </EditItemTemplate>
-                    <InsertItemTemplate>
-                        <asp:DropDownList ID="ddlTeam1" runat="server" DataSourceID="TeamsDS" DataTextField="Name" OnDataBound="ddlTeam1_DataBound"
-                            DataValueField="Id" SelectedValue='<%# Bind("Team1Id") %>' />
-                        <asp:TextBox ID="tbTeam1Alternate" runat="server" Text='<%# Bind("Team1Alternate") %>' />
                     </InsertItemTemplate>
-   <%--                 <ItemTemplate>
-                        <asp:Label ID="Label4" runat="server" Text='<%# Bind("Team1_Name") %>'></asp:Label>
-                    </ItemTemplate>--%>
                 </asp:TemplateField>
-                <asp:TemplateField HeaderText="Guest team" SortExpression="Team2_Name">
+                <asp:TemplateField HeaderText="Guest team">
                     <EditItemTemplate>
                         <asp:DropDownList ID="ddlTeam2" runat="server" DataSourceID="TeamsDS" DataTextField="Name"
-                            DataValueField="Id" OnDataBound="ddlTeam2_DataBound" SelectedValue='<%# Bind("Team1Id") %>'/>
+                            DataValueField="Id" OnDataBound="ddlTeam2_DataBound" />
                         <asp:TextBox ID="tbTeam2Alternate" runat="server" Text='<%# Bind("Team2Alternate") %>' />
                     </EditItemTemplate>
                     <InsertItemTemplate>
-                        <asp:DropDownList ID="ddlTeam2" runat="server" DataSourceID="TeamsDS" DataTextField="Name" OnDataBound="ddlTeam2_DataBound"
-                            DataValueField="Id" SelectedValue='<%# Bind("Team2Id") %>' />
-
+                        <asp:DropDownList ID="ddlTeam2" runat="server" DataSourceID="TeamsDS" DataTextField="Name"
+                            DataValueField="Id"  OnDataBound="ddlTeam2_DataBound" SelectedValue='<%# Bind("Team2Id") %>' />
                         <asp:TextBox ID="tbTeam2Alternate" runat="server" Text='<%# Bind("Team2Alternate") %>' />
                     </InsertItemTemplate>
-<%--                    <ItemTemplate>
-                        <asp:Label ID="Label5" runat="server" Text='<%# Bind("Team2_Name") %>'></asp:Label>
-                    </ItemTemplate>--%>
                 </asp:TemplateField>
                 <asp:TemplateField HeaderText="Score">
                     <EditItemTemplate>
@@ -338,7 +322,7 @@
                 <asp:Parameter Name="team1Score" Type="Int32" />
                 <asp:Parameter Name="team2Score" Type="Int32" />
                 <asp:Parameter Name="description" Type="String" />
-                <asp:Parameter Name="id" Type="Int32" />
+                <asp:ControlParameter ControlID="GridView1" DefaultValue="" Name="id" PropertyName="SelectedValue" />
                 <asp:Parameter Name="team1Points" Type="Decimal" />
                 <asp:Parameter Name="team2Points" Type="Decimal" />
                 <asp:Parameter Name="drawPoints" Type="Decimal" />
