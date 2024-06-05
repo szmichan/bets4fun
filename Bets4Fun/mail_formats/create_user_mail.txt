@@ -6,7 +6,7 @@ In order to activate it click below link:
 <a href="<%ActivationLink%>"><%ActivationLink%></a>
 <br/>
 <br/>
-If you want to play FOR MONEY please transfer <b>20 PLN</b> to my account <b>12 1240 2034 1111 0010 5442 3713</b>. In transfer title write your login and competition name.
+If you want to play FOR MONEY please transfer <b>20 PLN</b> to my account <b>replaceme</b>. In transfer title write your login and competition name.
 <br/>
 <br/>
 Best regards
