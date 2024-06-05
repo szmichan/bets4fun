@@ -19,15 +19,15 @@ namespace Bets4Fun.Anonymous
 
         protected void CreateUserWizard1_SendingMail(object sender, MailMessageEventArgs e)
         {
-            DB.UsersRow user = UsersLogic.GetUserByLogin(CreateUserWizard1.UserName);
+            var user = UsersLogic.GetUserByLogin(CreateUserWizard1.UserName);
             if (user != null)
             {
-                string url = Request.Url.ToString();
-                int index = url.LastIndexOf('/');
+                var url = Request.Url.ToString();
+                var index = url.LastIndexOf('/');
                 url = url.Substring(0, index);
 
 
-                string activationLink = string.Format("{0}/{1}?UserID={2}&Code={3}", url, "AccountVerify.aspx", 
+                var activationLink = string.Format("{0}/{1}?UserID={2}&Code={3}", url, "AccountVerify.aspx", 
                     HttpUtility.UrlEncode(PasswordEncoder.EncryptStringRijndael(user.Id.ToString())), 
                     HttpUtility.UrlEncode(PasswordEncoder.EncodePasswordMd5(CreateUserWizard1.UserName.ToString())));
                 e.Message.Body = e.Message.Body.Replace("<%ActivationLink%>", activationLink).Replace("<%FirstName%>", user.FirstName).Replace("<%LastName%>", user.LastName);
@@ -39,18 +39,18 @@ namespace Bets4Fun.Anonymous
 
         protected void CreateUserWizard1_CreatedUser(object sender, EventArgs e)
         {
-            TextBox firstName = (TextBox)CreateUserWizard1.CreateUserStep.ContentTemplateContainer.FindControl("FirstName");
-            TextBox lastName = (TextBox)CreateUserWizard1.CreateUserStep.ContentTemplateContainer.FindControl("LastName");
-            TextBox userName = (TextBox)CreateUserWizard1.CreateUserStep.ContentTemplateContainer.FindControl("UserName");
+            var firstName = (TextBox)CreateUserWizard1.CreateUserStep.ContentTemplateContainer.FindControl("FirstName");
+            var lastName = (TextBox)CreateUserWizard1.CreateUserStep.ContentTemplateContainer.FindControl("LastName");
+            var userName = (TextBox)CreateUserWizard1.CreateUserStep.ContentTemplateContainer.FindControl("UserName");
 
             UsersLogic.UpdateOtherData(firstName.Text, lastName.Text, userName.Text);
         }
 
         protected void CreateUserButton_Click(object sender, EventArgs e)
         {
-            MembershipCreateStatus status = MembershipCreateStatus.UserRejected;
+            var status = MembershipCreateStatus.UserRejected;
 
-            MembershipUser user = Membership.CreateUser(
+            var user = Membership.CreateUser(
                 ((TextBox)CreateUserWizard1.CreateUserStep.ContentTemplateContainer.FindControl("UserName")).Text,
                 ((TextBox)CreateUserWizard1.CreateUserStep.ContentTemplateContainer.FindControl("Password")).Text,
                 ((TextBox)CreateUserWizard1.CreateUserStep.ContentTemplateContainer.FindControl("Email")).Text,

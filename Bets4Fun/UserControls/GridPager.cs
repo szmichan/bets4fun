@@ -83,7 +83,7 @@
         {
             ResultsToShowPerPage = 5;
 
-            Control control = Parent;
+            var control = Parent;
             while (control != null)
             {
                 if (control is GridView)
@@ -103,9 +103,9 @@
             
             Controls.Add(new Literal { Text = "<div class=\"pagination text-center\"><ul>" });
 
-            int min = Math.Min(Math.Max(0, TheGrid.PageIndex - ( PageLinksToShow/2 )),
+            var min = Math.Min(Math.Max(0, TheGrid.PageIndex - ( PageLinksToShow/2 )),
                                Math.Max(0, TheGrid.PageCount - PageLinksToShow + 1));
-            int max = Math.Min(TheGrid.PageCount, min + PageLinksToShow);
+            var max = Math.Min(TheGrid.PageCount, min + PageLinksToShow);
 
             if (ShowFirstAndLast)
             {
@@ -117,7 +117,7 @@
                 AddLink(PreviousText ?? "Previous", "previousPage", TheGrid.PageIndex > 0, "Prev");
             }
 
-            for (int i = min; i < max; i++)
+            for (var i = min; i < max; i++)
             {
                 AddLink((i + 1).ToString(CultureInfo.InvariantCulture), "selected", TheGrid.PageIndex != i, (i + 1).ToString(CultureInfo.InvariantCulture));
             }
@@ -147,7 +147,7 @@
             Controls.Add(new Literal {Text = "<li>"});
             if (addAsLink)
             {
-                LinkButton button = new LinkButton
+                var button = new LinkButton
                     {
                         ID = "Page" + text,
                         CommandName = "Page",

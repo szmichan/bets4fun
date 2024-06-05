@@ -1,12 +1,7 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Web;
-using System.Web.UI;
 using System.Web.UI.WebControls;
 using Bets4Fun.BusinessLogic;
 using Bets4Fun.Common;
-using Bets4Fun.DBTableAdapters;
 
 namespace Bets4Fun.Admin
 {
@@ -76,16 +71,16 @@ namespace Bets4Fun.Admin
 
         protected void ChangePasswordCheckBox_CheckedChanged1(object sender, EventArgs e)
         {
-            CheckBox check = (CheckBox)UsersDV.FindControl("ChangePasswordCheckBox");
+            var check = (CheckBox)UsersDV.FindControl("ChangePasswordCheckBox");
             if (check != null)
             {
-                Panel panel = ((Panel)UsersDV.FindControl("PasswordsPanel"));
+                var panel = ((Panel)UsersDV.FindControl("PasswordsPanel"));
                 if (panel != null)
                 {
                     panel.Enabled = check.Checked;
                 }
 
-                RequiredFieldValidator validator = (RequiredFieldValidator)UsersDV.FindControl("PasswordRequiredValidatorEdit");
+                var validator = (RequiredFieldValidator)UsersDV.FindControl("PasswordRequiredValidatorEdit");
 
 
                 if (validator != null)
@@ -108,10 +103,10 @@ namespace Bets4Fun.Admin
 
         protected void UsersDSMod_Inserting(object sender, ObjectDataSourceMethodEventArgs e)
         {
-            TextBox tb = ((TextBox)UsersDV.FindControl("PasswordTextBoxInsert"));
+            var tb = ((TextBox)UsersDV.FindControl("PasswordTextBoxInsert"));
             if (tb != null)
             {
-                string login = e.InputParameters["Login"].ToString();
+                var login = e.InputParameters["Login"].ToString();
                 if (login != null)
                 {
                     if (UsersLogic.LoginExists(login))
@@ -137,13 +132,13 @@ namespace Bets4Fun.Admin
 
         protected void UsersDSMod_Updating(object sender, ObjectDataSourceMethodEventArgs e)
         {
-            TextBox tb = ((TextBox)UsersDV.FindControl("PasswordTextBoxEdit"));
+            var tb = ((TextBox)UsersDV.FindControl("PasswordTextBoxEdit"));
             if (tb != null)
             {
-                string login = e.InputParameters["Login"].ToString();
+                var login = e.InputParameters["Login"].ToString();
                 if (login != null)
                 {
-                    CheckBox cb = ((CheckBox)UsersDV.FindControl("ChangePasswordCheckBox"));
+                    var cb = ((CheckBox)UsersDV.FindControl("ChangePasswordCheckBox"));
                     if (cb != null)
                     {
                         if (cb.Checked)
@@ -214,10 +209,10 @@ namespace Bets4Fun.Admin
             {
                 foreach (RepeaterItem item in this.repAssigned.Items)
                 {
-                    CheckBox cbLeagueName = (CheckBox)item.FindControl("cbLeagueName");
+                    var cbLeagueName = (CheckBox)item.FindControl("cbLeagueName");
                     if (cbLeagueName.Checked)
                     {
-                        HiddenField hfLeagueId = (HiddenField)item.FindControl("hfLeagueID");
+                        var hfLeagueId = (HiddenField)item.FindControl("hfLeagueID");
 
                         UsersLogic.RevokeUserFromLeague(Convert.ToInt32(UsersGV.SelectedValue), Convert.ToInt32(hfLeagueId.Value));
                     }
@@ -233,10 +228,10 @@ namespace Bets4Fun.Admin
             {
                 foreach (RepeaterItem item in repAvailable.Items)
                 {
-                    CheckBox cbLeagueName = (CheckBox)item.FindControl("cbLeagueName");
+                    var cbLeagueName = (CheckBox)item.FindControl("cbLeagueName");
                     if (cbLeagueName.Checked)
                     {
-                        HiddenField hfLeagueId = (HiddenField)item.FindControl("hfLeagueID");
+                        var hfLeagueId = (HiddenField)item.FindControl("hfLeagueID");
 
                         UsersLogic.AssignUserToLeague(Convert.ToInt32(UsersGV.SelectedValue), Convert.ToInt32(hfLeagueId.Value));
                     }

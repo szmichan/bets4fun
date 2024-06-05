@@ -10,11 +10,11 @@ namespace Bets4Fun.Errors
                 Label1.Text = Request.QueryString["aspxerrorpath"];
             else
             {
-                int lastIndex = Request.RawUrl.IndexOf("404");
+                var lastIndex = Request.RawUrl.IndexOf("404");
 
                 if (lastIndex > 0)
                 {
-                    Uri uri = new Uri(Request.RawUrl.Substring(Request.RawUrl.IndexOf("404") + 3).Trim(new char[] { ';' }));
+                    var uri = new Uri(Request.RawUrl.Substring(Request.RawUrl.IndexOf("404") + 3).Trim(new char[] { ';' }));
                     Label1.Text = uri.PathAndQuery;
                 }
             }

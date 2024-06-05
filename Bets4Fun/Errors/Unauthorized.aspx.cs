@@ -10,11 +10,11 @@ namespace Bets4Fun.Errors
                 Label1.Text = Request.QueryString["ReturnUrl"];
             else
             {
-                int lastIndex = Request.RawUrl.IndexOf("401");
+                var lastIndex = Request.RawUrl.IndexOf("401");
 
                 if (lastIndex > 0)
                 {
-                    Uri uri = new Uri(Request.RawUrl.Substring(Request.RawUrl.IndexOf("401") + 3).Trim(new char[] { ';' }));
+                    var uri = new Uri(Request.RawUrl.Substring(Request.RawUrl.IndexOf("401") + 3).Trim(new char[] { ';' }));
                     Label1.Text = uri.PathAndQuery;
                 }
             }

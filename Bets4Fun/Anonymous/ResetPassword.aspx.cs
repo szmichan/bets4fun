@@ -13,7 +13,6 @@ namespace Bets4Fun.Anonymous
         {
             this.lbError.Visible = false;
             this.lbError.Text = string.Empty;
-            //this.lbSuccess.Visible = false;
         }
 
         protected void btnCancel_Click(object sender, EventArgs e)
@@ -23,7 +22,7 @@ namespace Bets4Fun.Anonymous
 
         protected void btnReset_Click(object sender, EventArgs e)
         {
-            DB.UsersRow user =  UsersLogic.GetUserByLogin(this.UserName.Text);
+            var user =  UsersLogic.GetUserByLogin(this.UserName.Text);
 
             if (user == null || user.Email != this.Email.Text)
             {
@@ -34,15 +33,15 @@ namespace Bets4Fun.Anonymous
             {
                 // OK
 
-                string path = Server.MapPath("~/mail_formats/reset_password.txt");
-                string body = File.ReadAllText(path, Encoding.Default);
-                string newPass = Guid.NewGuid().ToString().Substring(0, 8);
+                var path = Server.MapPath("~/mail_formats/reset_password.txt");
+                var body = File.ReadAllText(path, Encoding.Default);
+                var newPass = Guid.NewGuid().ToString().Substring(0, 8);
 
                 if (UsersLogic.ResetPass(user.Login, PasswordEncoder.EncodePasswordMd5(newPass)))
                 {
-                    SmtpClient client = new SmtpClient();
+                    var client = new SmtpClient();
 
-                    MailMessage message = new MailMessage
+                    var message = new MailMessage
                     {
                         Body = body.Replace("<%FirstName%>", user.FirstName).Replace("<%LastName%>", user.LastName).Replace("<%UserName%>", user.Login).Replace("<%NewPassword%>", newPass),
                         Subject = "password has been reset",
@@ -55,7 +54,6 @@ namespace Bets4Fun.Anonymous
 
                     client.Send(message);
 
-                    //this.lbSuccess.Visible = true;
                     this.MultiView1.ActiveViewIndex = 1;
                 }
                 else

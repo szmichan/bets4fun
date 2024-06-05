@@ -22,7 +22,7 @@ namespace Bets4Fun.User
         {
             if (e.Row.RowType == DataControlRowType.DataRow)
             {
-                DB.RankingRow rRow = (DB.RankingRow)((DataRowView)e.Row.DataItem).Row;
+                var rRow = (DB.RankingRow)((DataRowView)e.Row.DataItem).Row;
                 if (User.Identity.Name == rRow.Login)
                 {
                     e.Row.BackColor = System.Drawing.ColorTranslator.FromHtml("#FF6666");
@@ -38,20 +38,20 @@ namespace Bets4Fun.User
 
         protected void ddlContests_DataBound(object sender, EventArgs e)
         {
-            this.ddlContests.Items.Add(new ListItem() { Text = "[all]", Value = "-1" });
+            this.ddlContests.Items.Add(new ListItem { Text = "[all]", Value = "-1" });
         }
 
         protected void RankingGV_DataBound(object sender, EventArgs e)
         {
-            int leagueId = int.Parse(this.dllLeagues.SelectedValue);
+            var leagueId = int.Parse(this.dllLeagues.SelectedValue);
 
             if (leagueId > 0)
             {
-                DB.LeaguesRow league = LeaguesLogic.GetLeagueById(leagueId);
+                var league = LeaguesLogic.GetLeagueById(leagueId);
 
                 if (league != null && league.BettingForMoney)
                 {
-                    decimal pot = LeaguesLogic.GetUsersCountInLeague(leagueId) * league.EntryFee;
+                    var pot = LeaguesLogic.GetUsersCountInLeague(leagueId) * league.EntryFee;
 
                     this.lCount.Text = string.Format(
                         "<table style=\"text-align:right;margin-top: 30px;\"><tr><td>Currently in pot:</td><td><b>{0:#.00} PLN</b></td></tr><tr><td>I place:</td><td>{1:#.00} PLN</td></tr><tr><td>II place:</td><td>{2:#.00} PLN</td></tr><tr><td>III place:</td><td>{3:#.00} PLN</td></tr></table>",

@@ -19,7 +19,7 @@ namespace Bets4Fun.UserControls
         {
             this.Visible = true;
 
-            DB.GamesRow game = GamesLogic.GetGameById(gameId);
+            var game = GamesLogic.GetGameById(gameId);
 
             if (game != null)
             {
@@ -87,7 +87,7 @@ namespace Bets4Fun.UserControls
                 GameIdHF.Value = gameId.ToString();
                 UserIdHF.Value = userId.ToString();
 
-                DB.BetsRow bet = BetsLogic.GetBetByUserInGame(gameId, userId);
+                var bet = BetsLogic.GetBetByUserInGame(gameId, userId);
 
                 if (bet != null)
                 {

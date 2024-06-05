@@ -106,11 +106,11 @@ namespace Bets4Fun.Api
         [Route("game/{gameId}")]
         public IHttpActionResult GetBetsForGame([FromUri]int gameId)
         {
-            GetBetsForGameResponse response = new GetBetsForGameResponse();
+            var response = new GetBetsForGameResponse();
 
             try
             {
-                DB.GamesRow game = GamesLogic.GetGameById(gameId);
+                var game = GamesLogic.GetGameById(gameId);
 
                 if (game.GameDate >= DateTimeOffset.UtcNow.AddMinutes(-5) && !Roles.IsUserInRole(User.Identity.Name, "Admin"))
                 {
@@ -134,7 +134,7 @@ namespace Bets4Fun.Api
                     Team2Score = game.IsTeam2ScoreNull() ? null : (int?)game.Team2Score
                 };
 
-                DB.BetsDataTable bets = BetsLogic.GetBetsByGameId(gameId);
+                var bets = BetsLogic.GetBetsByGameId(gameId);
 
                 if (bets != null)
                 {
@@ -175,8 +175,8 @@ namespace Bets4Fun.Api
         {
             try
             {
-                DB.BetsRow bet = BetsLogic.GetBetByUserInGame(request.GameId, request.UserId);
-                DB.GamesRow game = GamesLogic.GetGameById(request.GameId);
+                var bet = BetsLogic.GetBetByUserInGame(request.GameId, request.UserId);
+                var game = GamesLogic.GetGameById(request.GameId);
 
                 if (game.GameDate <= DateTimeOffset.UtcNow.AddMinutes(5))
                 {

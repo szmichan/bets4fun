@@ -156,6 +156,13 @@
     <Compile Include="Admin\AdminUsers.aspx.designer.cs">
       <DependentUpon>AdminUsers.aspx</DependentUpon>
     </Compile>
+    <Compile Include="Anonymous\GameRules.aspx.cs">
+      <DependentUpon>GameRules.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Anonymous\GameRules.aspx.designer.cs">
+      <DependentUpon>GameRules.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Anonymous\ResetPassword.aspx.cs">
       <DependentUpon>ResetPassword.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -214,6 +221,13 @@
     </Compile>
     <Compile Include="UserControls\GridPager.cs">
       <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UserControls\ucGameRules.ascx.cs">
+      <DependentUpon>ucGameRules.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UserControls\ucGameRules.ascx.designer.cs">
+      <DependentUpon>ucGameRules.ascx</DependentUpon>
     </Compile>
     <Compile Include="UserControls\ucMakeContestInfoBet.ascx.cs">
       <DependentUpon>ucMakeContestInfoBet.ascx</DependentUpon>
@@ -374,6 +388,7 @@
     <Content Include="Admin\AdminRoles.aspx" />
     <Content Include="Admin\AdminTeams.aspx" />
     <Content Include="Admin\AdminUsers.aspx" />
+    <Content Include="Anonymous\GameRules.aspx" />
     <Content Include="Anonymous\ResetPassword.aspx" />
     <Content Include="App_Themes\Default\bets4fun.css" />
     <Content Include="App_Themes\Default\clock.css" />
@@ -573,6 +588,7 @@
     <Content Include="Scripts\jquery-3.3.1.min.js" />
     <Content Include="Scripts\jquery-3.3.1.slim.js" />
     <Content Include="Scripts\jquery-3.3.1.slim.min.js" />
+    <Content Include="UserControls\ucGameRules.ascx" />
     <Content Include="UserControls\ucMakeContestInfoBet.ascx" />
     <Content Include="User\ContestInfo.aspx" />
     <Content Include="User\Default.aspx" />

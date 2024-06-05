@@ -28,10 +28,6 @@ namespace Bets4Fun.User
                 GameDateFromCalendar.SelectedDate = DateTimeOffset.Now.AddDays(-1).ToString("yyyy-MM-dd"); //DateConverter.ConvertToLocal(DateTime.Now).AddDays(-1).ToString("yyyy-MM-dd");
                 GameDateToCalendar.SelectedDate = DateTimeOffset.Now.AddDays(7).ToString("yyyy-MM-dd");//DateConverter.ConvertToLocal(DateTime.Now).AddDays(7).ToString("yyyy-MM-dd");
             }
-            //else
-            //{
-            //    BetsGV.DataBind();
-            //}
         }
 
         protected void BetsDS_Selecting(object sender, ObjectDataSourceSelectingEventArgs e)
@@ -105,7 +101,7 @@ namespace Bets4Fun.User
         {
             if (e.Row.RowType == DataControlRowType.DataRow)
             {
-                DB.BetsRow bet = (DB.BetsRow)((DataRowView)e.Row.DataItem).Row;
+                var bet = (DB.BetsRow)((DataRowView)e.Row.DataItem).Row;
                 //LinkButton link = (LinkButton)e.Row.FindControl("BetLinkButton");
                 //if (link != null)
                 //{
@@ -151,7 +147,7 @@ namespace Bets4Fun.User
         {
             if (e.CommandName == "MakeBet")
             {
-                DB.UsersRow user = UsersLogic.GetUserByLogin(User.Identity.Name);
+                var user = UsersLogic.GetUserByLogin(User.Identity.Name);
                 if (user != null)
                     MakeBetPopup.Show(Convert.ToInt32(e.CommandArgument), user.Id);
             }

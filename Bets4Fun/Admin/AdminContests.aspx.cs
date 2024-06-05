@@ -66,7 +66,7 @@ namespace Bets4Fun.Admin
 
         protected void ContestsDetailsDS_Inserted(object sender, ObjectDataSourceStatusEventArgs e)
         {
-            int retVal = Convert.ToInt32(e.ReturnValue);
+            var retVal = Convert.ToInt32(e.ReturnValue);
         }
 
         protected void ContestsGV_RowDataBound(object sender, GridViewRowEventArgs e)

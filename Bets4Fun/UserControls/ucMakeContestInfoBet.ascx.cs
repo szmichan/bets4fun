@@ -17,7 +17,7 @@ namespace Bets4Fun.UserControls
 
             this.Visible = true;
 
-            DB.ContestsInfoRow contestsInfo = ContestsInfoLogic.GetContestsInfoById(contestInfoId);
+            var contestsInfo = ContestsInfoLogic.GetContestsInfoById(contestInfoId);
 
             if (contestsInfo != null)
             {
@@ -41,11 +41,11 @@ namespace Bets4Fun.UserControls
 
             if (ContestInfoIdHF.Value != "" && UserIdHF.Value != "")
             {
-                int optionId = -1;
+                var optionId = -1;
 
                 foreach (GridViewRow row in ContestInfoOptionsGV.Rows)
                 {
-                    CheckBox cbOptionChoosen = (CheckBox)row.FindControl("cbOptionChoosen");
+                    var cbOptionChoosen = (CheckBox)row.FindControl("cbOptionChoosen");
                     if (cbOptionChoosen.Checked)
                     {
                         optionId = Convert.ToInt32(ContestInfoOptionsGV.DataKeys[row.RowIndex].Value);
@@ -91,7 +91,7 @@ namespace Bets4Fun.UserControls
             if (e.Row.RowType == DataControlRowType.DataRow &&
                 (e.Row.RowState == DataControlRowState.Normal || e.Row.RowState == DataControlRowState.Alternate))
             {
-                CheckBox cbOptionChoosen = (CheckBox)e.Row.FindControl("cbOptionChoosen");
+                var cbOptionChoosen = (CheckBox)e.Row.FindControl("cbOptionChoosen");
                 cbOptionChoosen.Attributes["onclick"] = string.Format("javascript:ChildClick(this);");
             }
         }

@@ -7,27 +7,38 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace Bets4Fun.User.Stats {
-    
-    
-    public partial class Stats3 {
-        
+namespace Bets4Fun.Anonymous
+{
+
+
+    public partial class GameRules
+    {
+
         /// <summary>
-        /// lbStats1 control.
+        /// LinkButton3 control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lbStats1;
-        
+        protected global::System.Web.UI.WebControls.LinkButton LinkButton3;
+
         /// <summary>
-        /// rblStats control.
+        /// ucGameRules1 control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.RadioButtonList rblStats;
+        protected global::Bets4Fun.UserControls.UcCalendar ucGameRules1;
+
+        /// <summary>
+        /// btnLogIn control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button btnLogIn;
     }
 }

@@ -1,8 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Web;
-using System.Web.UI;
 using System.Web.UI.WebControls;
 using Bets4Fun.BusinessLogic;
 using System.Data;
@@ -28,7 +24,7 @@ namespace Bets4Fun.UserControls
         {
             this.Visible = true;
 
-            DB.GamesRow game = GamesLogic.GetGameById(gameId);
+            var game = GamesLogic.GetGameById(gameId);
 
             if (game != null)
             {
@@ -107,7 +103,7 @@ namespace Bets4Fun.UserControls
         {
             if (e.Row.RowType == DataControlRowType.DataRow)
             {
-                DB.BetsRow bet = (DB.BetsRow)((DataRowView)e.Row.DataItem).Row;
+                var bet = (DB.BetsRow)((DataRowView)e.Row.DataItem).Row;
                 if (Convert.ToInt32(UserIdHF.Value) == bet.User_Id)
                 {
                     //e.Row.BackColor = System.Drawing.ColorTranslator.FromHtml("#FF6666");

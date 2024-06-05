@@ -7,7 +7,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace ZakladyPilkarskie.User.Stats {
+namespace Bets4Fun.User.Stats {
     
     
     public partial class Stats2 {

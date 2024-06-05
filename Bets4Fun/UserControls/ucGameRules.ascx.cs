@@ -1,12 +1,11 @@
 ﻿using System;
 
-namespace Bets4Fun.User.Stats
+namespace Bets4Fun.UserControls
 {
-    public partial class Stats1 : System.Web.UI.Page
+    public class UcGameRules : System.Web.UI.UserControl
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-
         }
     }
 }

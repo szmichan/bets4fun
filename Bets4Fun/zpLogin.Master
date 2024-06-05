@@ -10,6 +10,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0"> 
 
     <script type="text/javascript" src="/Scripts/jquery-3.3.1.min.js"></script>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script>
     <script type="text/javascript" src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
 
     <link type="text/css" rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
@@ -50,17 +51,18 @@
             <div>
             </div>
         </div>
-
+        <asp:ContentPlaceHolder ID="LoginBottomContent" runat="server">
+        </asp:ContentPlaceHolder>
         <footer class="footer">
             <asp:Label ID="Label2" runat="server" Text=""></asp:Label>
         </footer>
         <script>
             $(function () {
+                $('[data-toggle="tooltip"]').tooltip();
                 $('form').nextAll().remove();
             });
         </script>
     </form>
 
 </body>
-
 </html>

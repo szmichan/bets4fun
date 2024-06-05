@@ -8,13 +8,13 @@ namespace Bets4Fun.Anonymous
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-            int userId = 0;
+            var userId = 0;
 
-            string userIdDecrypted = PasswordEncoder.DecryptStringRijndael(Request.QueryString["UserID"]);
+            var userIdDecrypted = PasswordEncoder.DecryptStringRijndael(Request.QueryString["UserID"]);
 
             if (!string.IsNullOrEmpty(Request.QueryString["UserID"]) && !string.IsNullOrEmpty(Request.QueryString["Code"]) && int.TryParse(userIdDecrypted, out userId))
             {
-                DB.UsersRow user = UsersLogic.GetUserById(userId);
+                var user = UsersLogic.GetUserById(userId);
                
                 if (!user.IsActivated)
                 {
