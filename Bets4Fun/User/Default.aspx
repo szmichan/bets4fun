@@ -33,7 +33,7 @@
                 </li>
                 <li class="four">
                     <asp:Label ID="Label11" runat="server" Text="wartości punktów możliwych do zdobycia ustalane są na podstawie zakładów bukmacherskich i mogą się nieznacznie zmieniać - ">
-                        points available to score are set accordingly to one of the betting portals (7 points is max, 1.5 is min) and they may change - <b><em>but not later than 2 hours before the match starts</em></b>
+                        points available to score are set accordingly to one of the betting portals (7 points is max, 2 is min) and they may change - <b><em>but not later than 2 hours before the match starts</em></b>
                     </asp:Label>
                 </li>
             </ol>

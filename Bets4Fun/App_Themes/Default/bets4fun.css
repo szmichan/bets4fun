@@ -338,11 +338,15 @@ ol.rules-item-list {
 .classification-container {
     display: flex;
     flex-direction: column;
-    margin: 100px 0px 0px 0px;
     min-width: 375px;
     justify-content: center;
     padding:20px;
 }
+    .classification-container .ranking {
+        max-width: 900px;
+        margin: auto;
+        margin-top: 30px;
+    }
 
 .line-heigt-2 {
     line-height: 2rem;

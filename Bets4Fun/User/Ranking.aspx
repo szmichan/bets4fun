@@ -25,8 +25,6 @@
                             </asp:DropDownList>
                         </div>
                       </div>
-                <br />
-                <br />
 
                 <asp:ObjectDataSource ID="dsContests" runat="server" SelectMethod="GetContests" TypeName="Bets4Fun.BusinessLogic.ContestsLogic">
                 </asp:ObjectDataSource>
@@ -37,14 +35,12 @@
                         <asp:ControlParameter ControlID="ddlContests" Name="contestId" PropertyName="SelectedValue" Type="Int32" DefaultValue="-1" />
                     </SelectParameters>
                 </asp:ObjectDataSource>
-
-
                 <div>
                     <asp:Label ID="lCount" runat="server" Text="" Font-Size="Small"></asp:Label>
                 </div>
                 <asp:GridView ID="RankingGV" runat="server" AutoGenerateColumns="False"
                     DataSourceID="RankingDS" AllowPaging="True" AllowSorting="True"
-                    PageSize="30" Width="100%" OnRowDataBound="RankingGV_RowDataBound" OnDataBound="RankingGV_DataBound">
+                    PageSize="30" Width="100%" OnRowDataBound="RankingGV_RowDataBound" OnDataBound="RankingGV_DataBound" CssClass="ranking">
                     <RowStyle BackColor="#FFFFF4" />
                     <Columns>
                         <asp:BoundField DataField="Position_RANK" HeaderText="Pos."
@@ -55,15 +51,15 @@
                             <ItemTemplate>
                                 <asp:Label ID="loginLabel" runat="server" Text='<%# Eval("Login").ToString().Length <= 17 ? Eval("Login").ToString() : Eval("Login").ToString().Substring(0, 17) + "..." %>' />
                             </ItemTemplate>
-                            <ItemStyle HorizontalAlign="Center" Width="20%" Font-Size="Small" />
+                            <ItemStyle HorizontalAlign="Center" Width="15%" Font-Size="Small" />
                         </asp:TemplateField>
-                        <asp:TemplateField HeaderText="Points">
+                        <asp:TemplateField HeaderText="Pts.">
                             <ItemTemplate>
                                 <asp:Label ID="ptsLabel" runat="server" Text='<%# string.Format("{0,8:####0.00}",Eval("Points"))%>' CssClass="pr-2 text-right" />
                             </ItemTemplate>
-                            <ItemStyle HorizontalAlign="Center" Width="20%" />
+                            <ItemStyle HorizontalAlign="Center" Width="25%" />
                         </asp:TemplateField>
-                        <asp:TemplateField HeaderText="Hit results">
+                        <asp:TemplateField HeaderText="Hit res.">
                             <ItemTemplate>
                                 <div class="pr-2 text-right">
                                     <asp:Label ID="directBetsLabel" runat="server" Text='<%# string.Format("{0,3:##0}",Eval("DirectBetsCount"))%>'>
@@ -73,7 +69,7 @@
                             <ItemStyle HorizontalAlign="Center" Width="10%" />
                             <HeaderStyle />
                         </asp:TemplateField>
-                        <asp:TemplateField HeaderText="Hit wins/draws">
+                        <asp:TemplateField HeaderText="Hit w/dr">
                             <ItemTemplate>
                                 <div class="pr-2 text-right">
                                     <asp:Label ID="resultBetsLabel" runat="server" Text='<%# string.Format("{0,3:##0}",Eval("ResultBetsCount"))%>'>
