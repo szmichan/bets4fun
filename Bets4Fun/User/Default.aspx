@@ -74,8 +74,8 @@
                 </li>
                 <li class="two">
                    <asp:Label ID="Label7" runat="server">
-                        FOR MONEY - you have to transfer 50 PLN to my bank account or give it to me personally. 
-                        If you choose first option in the transfer title write your login and competition name (eg. smichan, EURO 2020). 
+                        FOR MONEY - you have to transfer 20 PLN to my bank account. 
+                        If you choose first option in the transfer title write your login and competition name (eg. smichan, EURO 2040). 
                         Bank account number was sent in activation mail (if you lost it write to <a href="mailto:b3ts4fun@gmail.com">b3ts4fun@gmail.com</a>). 
                         Payments are accepted to the first whistle in the first match of the competition. 
                         After money transfer is confirmed I will add you to separate league so on <a href="/User/Ranking.aspx">Classification</a> screen you will be able to switch the <em>League</em> to see how many people are participating in that way and how much money is in the pot. 
