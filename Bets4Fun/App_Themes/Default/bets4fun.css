@@ -3,8 +3,7 @@
 }
 
 body {
-    background: linear-gradient(to bottom, rgba(255,255,255,0.5) 0, rgba(255,255,255,0.5) 100%), url(Images/euro2016/soccer-ball-on-green-grass-abstract-powerpoint-templates.jpg);
-    background-size: cover;
+    background: linear-gradient(to bottom, rgba(255,255,255,0.5) 0, rgba(255,255,255,0.5) 100%), url(Images/bg.jpg);
     font-family: "Segoe UI",Verdana,Helvetica,Sans-Serif;
 }
 
@@ -115,7 +114,7 @@ div.top-image {
 
 }
     div.top-image > img {
-        max-height: 300px;
+        max-height: 150px;
     }
 
 .dropdown-item {
@@ -232,7 +231,7 @@ ol.rules-item-list {
 @media only screen and (max-width: 790px) {
     div .top-image > img {
         height: auto;
-        max-width: 100vw;
+        max-width: 50vw;
     }
 
     .rules-items {
@@ -372,4 +371,9 @@ ol.rules-item-list {
         width: 100%;
         height: auto;
     }
+}
+
+/* REMOVE SERVER INFOS */
+form ~ div:not(.tooltip-help) {
+    display: none !important;
 }

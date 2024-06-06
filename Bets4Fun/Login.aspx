@@ -16,8 +16,10 @@
                 <input id="Password" type="password" class="form-control" name="password" placeholder="Password" runat="server" />
             </div>
             <asp:Button ID="bLogin" runat="server" Text="Login" OnClick="bLogin_Click" CssClass="btn btn-primary btn-block mt-4" />
-
-            <asp:Label ID="lbError" runat="server" Text="* invalid login or password or account has not been activated" CssClass="text-danger text-small" Visible="false"></asp:Label>
+            
+            <div class="text-danger text-small">
+                <asp:Label ID="lbError" runat="server" Text="* invalid login or password or account has not been activated" Visible="false" />
+            </div>
 
             <div class="login-options">
                 <asp:LinkButton ID="LinkButton1" runat="server" PostBackUrl="~/Anonymous/CreateAccount.aspx" CssClass="btn-link btn-sm">register account</asp:LinkButton>

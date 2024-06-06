@@ -10,7 +10,7 @@
                 <asp:Label ID="Rule1Label1" runat="server" Text="przy każdym meczu w nawiasach widoczna jest ilość punktów, które można zdobyć za wytypowanie wyniku (zwycięstwo/remis)">
                     for each match there are visible points that are available to score for result prediction (winner/draw)
                 </asp:Label>
-                <button type="button" class="btn btn-info sheen" data-toggle="tooltip" data-html="true" title="<div class='tooltip-help-points'></div>">
+                <button type="button" class="btn btn-info sheen" data-toggle="tooltip" data-html="true" title="<div class='tooltip-help tooltip-help-points' ></div>">
                     INFO
                 </button>
             </li>
@@ -23,7 +23,7 @@
                 <asp:Label ID="Label4" runat="server" Text="końcowa ilość zdobytych puntków w danym meczu jest dodatkowo przemnażana przez współczynnik określający">
                     final score is multiplied by factor which determines <b><em>rank of the match</em></b>. It will grow accordingly to competition stage (group stage, round of 16, quater finals etc.)
                 </asp:Label>
-                <button type="button" class="btn btn-info sheen" data-toggle="tooltip" data-html="true" title="<div class='tooltip-help-weights'></div>">
+                <button type="button" class="btn btn-info sheen" data-toggle="tooltip" data-html="true" title="<div class='tooltip-help tooltip-help-weights'></div>">
                     INFO
                 </button>
             </li>
@@ -65,13 +65,13 @@
         <ol class="rules-item-list">
             <li class="one">
                 <asp:Label ID="Label3" runat="server" Text="FOR FUN - logujemy się, obstawiamy wyniki, śledzimy swoją pozycję w rankingu">
-                    FOR FUN - we log in, bet the results, track our position in the ranking
+                    FOR FUN - we log in, bet the results, track our position in the ranking. <strong>You win satisfaction and respect !!!</strong>
                 </asp:Label>
             </li>
             <li class="two">
                 <asp:Label ID="Label7" runat="server">
                     FOR MONEY - you have to transfer 20 PLN to my bank account. 
-                    If you choose first option in the transfer title write your login and competition name (eg. smichan, EURO 2040). 
+                    If you choose this option in the transfer title write your login and competition name (eg. smichan, EURO 2040). 
                     Bank account number was sent in activation mail (if you lost it write to <a href="mailto:b3ts4fun@gmail.com">b3ts4fun@gmail.com</a>). 
                     Payments are accepted to the first whistle in the first match of the competition. 
                     After money transfer is confirmed I will add you to separate league so on <a href="/User/Ranking.aspx">Classification</a> screen you will be able to switch the <em>League</em> to see how many people are participating in that way and how much money is in the pot. 

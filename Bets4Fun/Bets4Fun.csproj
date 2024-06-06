@@ -394,6 +394,7 @@
     <Content Include="App_Themes\Default\clock.css" />
     <Content Include="App_Themes\Default\Images\banners\badge_bahrain.png" />
     <Content Include="App_Themes\Default\Images\banners\badge_qatar.png" />
+    <Content Include="App_Themes\Default\Images\bg.jpg" />
     <Content Include="App_Themes\Default\Images\euro2016\soccer-ball-on-green-grass-abstract-powerpoint-templates.jpg" />
     <Content Include="App_Themes\Default\Images\euro2016\soccer-player.jpg" />
     <Content Include="App_Themes\Default\Images\euro2024\logo.jpg" />

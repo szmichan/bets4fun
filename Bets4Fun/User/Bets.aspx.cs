@@ -25,8 +25,8 @@ namespace Bets4Fun.User
             {
                 HttpContext.Current.Session["collapsed-bets"] = "collapse show";
 
-                GameDateFromCalendar.SelectedDate = DateTimeOffset.Now.AddDays(-1).ToString("yyyy-MM-dd"); //DateConverter.ConvertToLocal(DateTime.Now).AddDays(-1).ToString("yyyy-MM-dd");
-                GameDateToCalendar.SelectedDate = DateTimeOffset.Now.AddDays(7).ToString("yyyy-MM-dd");//DateConverter.ConvertToLocal(DateTime.Now).AddDays(7).ToString("yyyy-MM-dd");
+                GameDateFromCalendar.SelectedDate = DateTimeOffset.Now.AddDays(-1).ToString("yyyy-MM-dd");
+                //GameDateToCalendar.SelectedDate = DateTimeOffset.Now.AddDays(7).ToString("yyyy-MM-dd");
             }
         }
 
@@ -37,46 +37,27 @@ namespace Bets4Fun.User
 
             if (e.InputParameters["BetDateTo"] != null)
             {
-                //DateTimeOffset localTime2 = DateTime.SpecifyKind(DateTime.Parse(e.InputParameters["BetDateTo"].ToString()).AddDays(1).AddMilliseconds(-1), DateTimeKind.Local);
-                //e.InputParameters["BetDateTo"] = localTime2;
                 e.InputParameters["BetDateTo"] = DateConverter.ConvertToUtcFromCest(DateTime.Parse(e.InputParameters["BetDateTo"].ToString()).AddDays(1).AddMilliseconds(-1)); //DateTimeOffset.Parse(e.InputParameters["BetDateTo"].ToString()).AddDays(1).AddMilliseconds(-1).ToUniversalTime();
             }
 
             if (e.InputParameters["BetDateFrom"] != null)
             {
-                //DateTimeOffset localTime2 = DateTime.SpecifyKind(DateTime.Parse(e.InputParameters["BetDateFrom"].ToString()), DateTimeKind.Local);
-                //e.InputParameters["BetDateFrom"] = localTime2;
                 e.InputParameters["BetDateFrom"] = DateConverter.ConvertToUtcFromCest(DateTime.Parse(e.InputParameters["BetDateFrom"].ToString())); //DateTimeOffset.Parse(e.InputParameters["BetDateFrom"].ToString()).ToUniversalTime();
             }
 
             if (e.InputParameters["GameDateTo"] != null)
             {
-                //DateTimeOffset localTime2 = DateTime.SpecifyKind(DateTime.Parse(e.InputParameters["GameDateTo"].ToString()).AddDays(1).AddMilliseconds(-1), DateTimeKind.Local);
-                //e.InputParameters["GameDateTo"] = localTime2
                 e.InputParameters["GameDateTo"] = DateConverter.ConvertToUtcFromCest(DateTime.Parse(e.InputParameters["GameDateTo"].ToString()).AddDays(1).AddMilliseconds(-1)); //DateTimeOffset.Parse(e.InputParameters["GameDateTo"].ToString()).AddDays(1).AddMilliseconds(-1).ToUniversalTime();
             }
 
             if (e.InputParameters["GameDateFrom"] != null)
             {
-                //DateTimeOffset localTime2 = DateTime.SpecifyKind(DateTime.Parse(e.InputParameters["GameDateFrom"].ToString()), DateTimeKind.Local);
-                //e.InputParameters["GameDateFrom"] = localTime2;
                 e.InputParameters["GameDateFrom"] = DateConverter.ConvertToUtcFromCest(DateTime.Parse(e.InputParameters["GameDateFrom"].ToString())); //DateTimeOffset.Parse(e.InputParameters["GameDateFrom"].ToString()).ToUniversalTime();
             }
         }
 
         protected void BetsDS_Filtering(object sender, ObjectDataSourceFilteringEventArgs e)
         {
-            //e.ParameterValues["Date"] = DateConverter.ConvertToLocal(DateTime.Now).ToString("yyyy-MM-dd");
-
-            //if (!string.IsNullOrEmpty(e.ParameterValues["GameDateTo"].ToString()))
-            //{
-            //    e.ParameterValues["GameDateTo"] = DateTime.Parse(e.ParameterValues["GameDateTo"].ToString()).AddDays(1).AddMilliseconds(-1).ToString("yyyy-MM-dd");
-            //}
-
-            //if (!string.IsNullOrEmpty(e.ParameterValues["BetDateTo"].ToString()))
-            //{
-            //    e.ParameterValues["BetDateTo"] = DateTime.Parse(e.ParameterValues["BetDateTo"].ToString()).AddDays(1).AddMilliseconds(-1).ToString("yyyy-MM-dd");
-            //}
         }
 
         protected void ContestDDL_DataBound(object sender, EventArgs e)
@@ -102,29 +83,7 @@ namespace Bets4Fun.User
             if (e.Row.RowType == DataControlRowType.DataRow)
             {
                 var bet = (DB.BetsRow)((DataRowView)e.Row.DataItem).Row;
-                //LinkButton link = (LinkButton)e.Row.FindControl("BetLinkButton");
-                //if (link != null)
-                //{
-                //    link.Enabled = (!bet.IsGame_DateNull() && bet.Game_Date >= DateConverter.ConvertToLocal(DateTime.Now.AddMinutes(5)));
-                //    if (!link.Enabled)
-                //    {
-                //        link.ForeColor = Color.LightGray;
-                //    }
-                //}
-                //link = (LinkButton)e.Row.FindControl("DeleteBetButton");
-                //if (link != null)
-                //{
-                //    link.Enabled = (!bet.IsGame_DateNull() && bet.Game_Date >= DateConverter.ConvertToLocal(DateTime.Now.AddMinutes(5)));
-                //    if (!link.Enabled)
-                //    {
-                //        link.ForeColor = Color.LightGray;
-                //    }
-                //    else
-                //    {
-                //        link.Attributes.Add("onclick", "return Confirm('Czy na pewno chcesz zrezygnować z tego zakładu?');");
-                //    }
-                //}
-
+                
                 if (!bet.IsPointsNull())
                 {
                     if (bet.Points == 0)

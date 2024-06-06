@@ -33,7 +33,7 @@
     <div style="width: 100%; vertical-align: top;">
         <asp:UpdatePanel ID="UpdatePanel1" runat="server" UpdateMode="Conditional" RenderMode="Block">
             <ContentTemplate>
-                <button type="button" class="btn btn-info btn-block" data-target="#filters" data-toggle="collapse" aria-expanded="false" aria-controls="filters" onclick="checkToggle($(this),'Bets.aspx/SaveCollapsedState')">Toggle Filters</button>
+                <button type="button" class="btn btn-lg btn-primary m-2" data-target="#filters" data-toggle="collapse" aria-expanded="false" aria-controls="filters" onclick="checkToggle($(this),'Bets.aspx/SaveCollapsedState')">Toggle Filters</button>
                 <div id="filters" class="px-4 <%= HttpContext.Current.Session["collapsed-bets"].ToString() %>" style="background-color:#7abcc7">
                      <div class="pt-4 form-group row">
                         <label for="BetDateFromCalendar" class="col-sm-2 col-form-label"><b>Bet date:</b></label>

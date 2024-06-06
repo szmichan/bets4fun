@@ -51,19 +51,20 @@
                             <ItemTemplate>
                                 <asp:Label ID="loginLabel" runat="server" Text='<%# Eval("Login").ToString().Length <= 17 ? Eval("Login").ToString() : Eval("Login").ToString().Substring(0, 17) + "..." %>' />
                             </ItemTemplate>
-                            <ItemStyle HorizontalAlign="Center" Width="15%" Font-Size="Small" />
+                            <ItemStyle HorizontalAlign="Center" Width="20%" Font-Size="Small" />
                         </asp:TemplateField>
                         <asp:TemplateField HeaderText="Pts.">
                             <ItemTemplate>
-                                <asp:Label ID="ptsLabel" runat="server" Text='<%# string.Format("{0,8:####0.00}",Eval("Points"))%>' CssClass="pr-2 text-right" />
+                                <div class="pr-2 text-right">
+                                    <asp:Label ID="ptsLabel" runat="server" Text='<%# string.Format("{0,8:####0.00}",Eval("Points"))%>' />
+                                </div>
                             </ItemTemplate>
-                            <ItemStyle HorizontalAlign="Center" Width="25%" />
+                            <ItemStyle HorizontalAlign="Center" Width="20%" />
                         </asp:TemplateField>
                         <asp:TemplateField HeaderText="Hit res.">
                             <ItemTemplate>
                                 <div class="pr-2 text-right">
-                                    <asp:Label ID="directBetsLabel" runat="server" Text='<%# string.Format("{0,3:##0}",Eval("DirectBetsCount"))%>'>
-                                    </asp:Label>
+                                    <asp:Label ID="directBetsLabel" runat="server" Text='<%# string.Format("{0,3:##0}",Eval("DirectBetsCount"))%>' />
                                 </div>
                             </ItemTemplate>
                             <ItemStyle HorizontalAlign="Center" Width="10%" />
